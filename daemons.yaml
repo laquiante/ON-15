@@ -1,6 +1,7 @@
 - hosts: switche
   name: Configure /etc/frr/daemon
   become: yes
+  gather_facts: false
   tasks:
     - copy:
         src: /home/cumulus/ON-15/daemons
