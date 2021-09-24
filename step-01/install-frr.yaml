@@ -2,26 +2,36 @@
   name: Install frr
   become: yes
   gather_facts: no
-  tasks:
-    - name: Add frr repo key
-      ansible.builtin.apt_key:
-        url: https://deb.frrouting.org/frr/keys.asc
-        state: present
+  #tasks:
+  #  - name: Add frr repo key
+  #    ansible.builtin.apt_key:
+  #      url: https://deb.frrouting.org/frr/keys.asc
+  #      state: present
 
  #   - name: Add frr repo
  #     ansible.builtin.apt_repository:
  #       repo: deb https://deb.frrouting.org/frr bionic frr-stable
  #       state: present
 
-    - name: Add frr repo
-      shell: sudo echo deb https://deb.frrouting.org/frr $(lsb_release -s -c) frr-stable | sudo tee -a /etc/apt/sources.list.d/frr.list
+ #   - name: Add frr repo
+ #     shell: sudo echo deb https://deb.frrouting.org/frr $(lsb_release -s -c) frr-stable | sudo tee -a /etc/apt/sources.list.d/frr.list
 
-    - name: Install frr
-      apt:
-        pkg:
-        - frr
-        - frr-pythontools
+ #   - name: Install frr
+ #     apt:
+ #       pkg:
+ #       - frr
+ #       - frr-pythontools
 
+- name: Install FRR
+  package:
+    name:
+      - frr
+      - python-ipaddress
+      - frr-pythontools
+    state: latest  # noqa 403
+  become: true
+#  notify:
+#    - restart frr
 
 #curl -s https://deb.frrouting.org/frr/keys.asc | sudo apt-key add – 
 #FRRVER="frr-stable“
