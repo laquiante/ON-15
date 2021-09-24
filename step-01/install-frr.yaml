@@ -11,16 +11,13 @@
     - name: Add frr repo
       shell: sudo echo deb https://deb.frrouting.org/frr bionic frr-stable | sudo tee -a /etc/apt/sources.list.d/frr.list
 
- #   - name: Install frr
- #     apt:
- #       pkg:
- #       - frr
- #       - frr-pythontools
+    - name: Install frr
+      apt:
+        pkg:
+        - frr
+        - frr-pythontools
+        
+    - name: kick frr
+      shell: systemctl restart frr
 
-#  notify:
-#    - restart frr
 
-#curl -s https://deb.frrouting.org/frr/keys.asc | sudo apt-key add – 
-#FRRVER="frr-stable“
-#echo deb https://deb.frrouting.org/frr $(lsb_release -s -c) $FRRVER | sudo tee -a /etc/apt/sources.list.d/frr.list
-#sudo apt update && sudo apt install frr frr-pythontools
