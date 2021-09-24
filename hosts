@@ -29,7 +29,7 @@ hypervisor01 ansible_host=192.168.200.6
 vm01 ansible_host=192.168.200.7
 vm02 ansible_host=192.168.200.8
 
-[vm:children]
+[vm]
 vm01
 vm02
 
