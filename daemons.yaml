@@ -1,4 +1,4 @@
-- hosts: leaf
+- hosts: switche
   name: Configure /etc/frr/daemon
   become: yes
   tasks:
@@ -15,19 +15,4 @@
         state=restarted
       listen: "frr_restart"
         
-- hosts: spine
-  name: Configure /etc/frr/daemon
-  become: yes
-  tasks:
-    - copy:
-        src: /home/cumulus/ON-15/daemons
-        dest: /etc/frr/daemons
-      notify:
-        - frr_restart
 
-  handlers:
-    - name: frr_restart
-      service:
-        name=frr
-        state=restarted
-      listen: "frr_restart"
