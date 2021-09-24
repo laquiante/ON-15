@@ -1,0 +1,20 @@
+- hosts: vm
+  name: Install frr
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: Add frr repo key
+      ansible.builtin.apt_key:
+        url: https://deb.frrouting.org/frr/keys.asc
+        state: present
+
+    - name: Add frr repo
+      ansible.builtin.apt_repository:
+        repo: deb https://deb.frrouting.org/frr {{ ansible_distribution_release | lower }} frr-stable
+        state: present
+
+    - name: Install frr
+      apt:
+        pkg:
+        - frr
+        - frr-pythontools
