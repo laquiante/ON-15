@@ -6,13 +6,15 @@
     - copy:
         src: /home/cumulus/ON-15/step-01/daemons
         dest: /etc/frr/daemons
-      notify:
-        - frr_restart
+    - shell: systemctl restart frr
         
-  handlers:
-    - name: frr_restart
-      service:
-        name=frr
-        state=restarted
-      listen: "frr_restart"
+- hosts: vm
+  name: Configure /etc/frr/host-daemon
+  become: yes
+  gather_facts: false
+  tasks:
+    - copy:
+        src: /home/cumulus/ON-15/step-01/host-daemons
+        dest: /etc/frr/daemons
+    - shell: systemctl restart frr
         
