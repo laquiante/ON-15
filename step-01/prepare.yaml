@@ -2,7 +2,7 @@
   name: create vSwitch1 and vSwitch2
   become: yes
   gather_facts: fasle
-  task:
+  tasks:
     - copy:
         src: /home/cumulus/ON-15/step-01/hypervisor01
         dest: /home/cumulus/hypervisor01
