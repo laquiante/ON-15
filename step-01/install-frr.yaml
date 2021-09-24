@@ -2,7 +2,7 @@
   name: Install frr
   become: yes
   gather_facts: no
-  #tasks:
+  tasks:
   #  - name: Add frr repo key
   #    ansible.builtin.apt_key:
   #      url: https://deb.frrouting.org/frr/keys.asc
@@ -22,14 +22,15 @@
  #       - frr
  #       - frr-pythontools
 
-- name: Install FRR
-  package:
-    name:
-      - frr
-      - python-ipaddress
-      - frr-pythontools
-    state: latest  # noqa 403
-  become: true
+  - name: Install FRR
+    package:
+      name:
+        - frr
+        - python-ipaddress
+        - frr-pythontools
+      state: latest  # noqa 403
+    become: true
+
 #  notify:
 #    - restart frr
 
