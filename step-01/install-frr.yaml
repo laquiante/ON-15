@@ -14,7 +14,7 @@
  #       state: present
 
     - name: Add frr repo
-      shell: echo deb https://deb.frrouting.org/frr $(lsb_release -s -c) frr-stable | sudo tee -a /etc/apt/sources.list.d/frr.list
+      shell: sudo echo deb https://deb.frrouting.org/frr $(lsb_release -s -c) frr-stable | sudo tee -a /etc/apt/sources.list.d/frr.list
 
     - name: Install frr
       apt:
