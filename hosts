@@ -16,7 +16,7 @@ leaf06 ansible_host=192.168.200.14
 spine01 ansible_host=192.168.200.15
 spine02 ansible_host=192.168.200.16
 
-[switche:childen]
+[switche:children]
 leaf
 spine
 
