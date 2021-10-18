@@ -30,4 +30,15 @@
   tasks:
     - copy:
         src: /home/cumulus/ON-15/inventory/files/topology.dot
-        dest: /etc/
+        dest: /etc/ptm.d/topology.dot
+        mode: '0644'
+        owner: 'root'
+        group: 'root'
+      notify: restart_ptm
+
+  handlers:
+    - name: restart_ptm
+      service:
+        name=ptmd
+        state=restarted
+      listen: restart_ptm
