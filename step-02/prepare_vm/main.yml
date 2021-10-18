@@ -20,6 +20,7 @@
     - name: Install frr
       apt:
         pkg:
+        - ca-certificates
         - frr
         - frr-pythontools
 
