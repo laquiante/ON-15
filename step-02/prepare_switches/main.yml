@@ -43,7 +43,7 @@
         state=restarted
       listen: restart_ptm
       
-- hosts: leaf01
+- hosts: spine01
   name: verify layout
   become: yes
   gather_facts: false
