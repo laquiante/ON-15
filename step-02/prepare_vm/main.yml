@@ -12,7 +12,7 @@
     - name: Add frr repo
       shell: sudo echo deb https://deb.frrouting.org/frr bionic frr-stable | sudo tee -a /etc/apt/sources.list.d/frr.list
 
-    - name: update chache
+    - name: update cache
       apt:
         name: frr
         update_cache: yes
