@@ -22,3 +22,12 @@
         src: /home/cumulus/ON-15/inventory/files/daemons
         dest: /etc/frr/daemons
     - shell: systemctl restart frr
+    
+- hosts: switche
+  name: copy topology.dot to target devices
+  becomre: yes
+  gather_facts: false
+  tasks:
+    - copy:
+        src: /home/cumulus/ON-15/inventory/files/topology.dot
+        dest: /etc/
