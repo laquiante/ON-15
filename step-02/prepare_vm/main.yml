@@ -44,6 +44,6 @@
   gather_facts: false
   tasks:
     - copy:
-        src: /home/cumulus/ON-15/inventory/files/daemons
+        src: /home/cumulus/ON-15/inventory/files/hdaemons
         dest: /etc/frr/daemons
     - shell: systemctl restart frr
