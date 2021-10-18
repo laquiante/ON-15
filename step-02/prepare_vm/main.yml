@@ -1,15 +1,5 @@
 ---
 - hosts: vm
-  name: Configure /etc/frr/daemon
-  become: yes
-  gather_facts: false
-  tasks:
-    - copy:
-        src: /home/cumulus/ON-15/inventory/files/daemons
-        dest: /etc/frr/daemons
-    - shell: systemctl restart frr
-
-- hosts: vm
   name: Install frr
   become: yes
   gather_facts: false
@@ -35,3 +25,13 @@
 
     - name: kick frr
       shell: systemctl restart frr
+      
+- hosts: vm
+  name: Configure /etc/frr/daemon
+  become: yes
+  gather_facts: false
+  tasks:
+    - copy:
+        src: /home/cumulus/ON-15/inventory/files/daemons
+        dest: /etc/frr/daemons
+    - shell: systemctl restart frr
