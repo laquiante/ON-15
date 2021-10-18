@@ -1,5 +1,16 @@
 ---
 - hosts: vm
+  name: NOT RECOMMENDED ***** diabling OCSP verification ***** NOT RECOMMENDED
+  become: yes
+  gather_facts: false
+  tasks: 
+    - name: copy apt config file
+      copy:
+        dest: "/etc/apt/apt.conf.d/99verify-peer.conf
+        content: |
+          Acquire { https::Verify-Peer false }
+          
+- hosts: vm
   name: Install frr
   become: yes
   gather_facts: false
