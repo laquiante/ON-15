@@ -2,7 +2,7 @@
 - hosts: vm
   name: Configure /etc/frr/daemon
   become: yes
-  gather_facts: false
+  gather_facts: no
   tasks:
     - copy:
         src: /home/cumulus/ON-15/inventory/files/daemons
