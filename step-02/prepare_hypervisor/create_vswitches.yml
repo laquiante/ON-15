@@ -1,0 +1,11 @@
+---
+- hosts: hypervisor01
+  name: create vSwitch1 and vSwitch2
+  become: yes
+  gather_facts: false
+  tasks:
+    - copy:
+        src: /home/cumulus/ON-15/step-02/prepare_hypervisor/vswitches.sh
+        dest: /home/cumulus/vswitches.sh
+        mode: u+xrw
+    - shell: ./vswitches.sh
