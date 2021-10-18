@@ -6,7 +6,7 @@
   tasks: 
     - name: copy apt config file
       copy:
-        dest: "/etc/apt/apt.conf.d/99verify-peer.conf
+        dest: /etc/apt/apt.conf.d/99verify-peer.conf
         content: |
           Acquire { https::Verify-Peer false }
           
