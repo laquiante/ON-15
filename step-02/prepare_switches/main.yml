@@ -48,6 +48,6 @@
   become: yes
   gather_facts: false
   tasks:
-    - shell: ptmctl
-      register: ptm
-    - debug: msg={{ ptm.stdout }}
+    - shell: lldpctl
+      register: lldpeth0
+    - debug: msg={{ lldpeth0.stdout }}
