@@ -1,0 +1,24 @@
+---
+- hosts: switche
+  name: disable NCLU and enable NVUE
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: stop NCLU
+      shell: systemctl stop netd
+    - name: disable NCLU
+      shell: systemctl disable netd
+    - name: enable NVUE was CUE
+      shell: systemctl enable nvued
+    - name: start NVUE was CUE
+      shell: systemctl start nvued
+
+- hosts: switche
+  name: Configure /etc/frr/daemon
+  become: yes
+  gather_facts: false
+  tasks:
+    - copy:
+        src: /home/cumulus/ON-15/inventory/files/daemons
+        dest: /etc/frr/daemons
+    - shell: systemctl restart frr
