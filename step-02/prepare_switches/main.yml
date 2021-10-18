@@ -42,3 +42,12 @@
         name=ptmd
         state=restarted
       listen: restart_ptm
+      
+- hosts: leaf01
+  name: verify layout
+  become: yes
+  gather_facts: false
+  tasks:
+    - shell: ptmctl
+      register: ptm
+    - debug: msg={{ ptm.stdout }}
