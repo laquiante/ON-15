@@ -37,7 +37,4 @@ vm02
 ansible_user=cumulus
 ansible_become_pass=CumulusLinux!
 
-    © 2021 GitHub, Inc.
-    Terms
-    Privacy
-    Security
+
