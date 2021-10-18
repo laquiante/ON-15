@@ -44,7 +44,7 @@
       listen: restart_ptm
       
 - hosts: spine01
-  name: verify layout
+  name: verify oob
   become: yes
   gather_facts: false
   tasks:
