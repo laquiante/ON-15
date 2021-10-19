@@ -16,6 +16,6 @@
     - name: activate staging buffer
       shell: nv config apply -y
     - name: iproute2 interface list
-      shell: ip -br -j l
-      register: iproute2
-    - debug: msg={{ iproute2.stdout }}
+      shell: bridge link
+      register: br
+    - debug: msg={{ br.stdout }}
