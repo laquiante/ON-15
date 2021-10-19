@@ -5,20 +5,20 @@ auto eth0
 iface eth0 inet dhcp
     post-up sysctl -w net.ipv6.conf.eth0.accept_ra=2
 
-auto eth1
-iface eth1 inet static
+auto enp97s0f0
+iface enp97s0f0 inet static
   bond-master uplink
 
-  auto eth2
-  iface eth2 inet static
-    bond-master uplink
+auto enp97s0f1
+iface enp97s0f1 inet static
+  bond-master uplink
 
 auto uplink
 iface uplink inet static
   address 10.0.10.13
   netmask 255.255.255.0
   mtu 9216
-  bond-slaves eth1 eth2
+  bond-slaves enp97s0f0 enp97s0f1
   bond-mode 802.3ad
   bond-miimon 100
   bond-lacp-rate 1
