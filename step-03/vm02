@@ -3,10 +3,10 @@
   name: create bond, set loopback and activate changes
   become: yes
   gather_facts: no
-    - name: e/n/i file and interface manager activation
-      copy:
-        src: /home/cumulus/ON-15/inventory/files/vm02
-        dest: /etc/network/interfaces
-    # ifreload
-    - name: activate changes for vm02
-      shell: /sbin/ifreload -a
+  - name: e/n/i file and interface manager activation
+    copy:
+      src: /home/cumulus/ON-15/inventory/files/vm02
+      dest: /etc/network/interfaces
+  # ifreload
+  - name: activate changes for vm02
+    shell: /sbin/ifreload -a
