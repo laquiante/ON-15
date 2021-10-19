@@ -8,6 +8,8 @@
       shell: nv set interface lo ip address 192.168.0.202/32
     - name: enable switchports
       shell: nv set interface swp123-128
+    - name: set hostname
+      shell: nv set platform hostname value spine02
     - name: activate staging buffer
       shell: nv config apply -y
     - name: iproute2 interface list
