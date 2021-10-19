@@ -1,0 +1,25 @@
+---
+- hosts: leaf02
+  name: create bridge, set loopback and enable switch ports
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: nvue set items
+      shell: nv set {{ item }}
+      with_items:
+      - interface lo ip address 192.168.0.2/32
+      - interface swp1,31-32
+      - bridge domain br_A vlan 10,11
+      - interface swp1 bridge domain br_A access 10
+      - platform hostname value leaf02
+      
+    - name: activate staging buffer
+      shell: nv config apply -y
+    - name: iproute2 bridge interface list
+      shell: bridge link
+      register: br
+    - debug: msg={{ br.stdout }}
+    - name: iproute2 bridge forwarding database
+      shell: bridge fdb
+      register: fdb
+    - debug: msg={{ fdb.stdout }}  
