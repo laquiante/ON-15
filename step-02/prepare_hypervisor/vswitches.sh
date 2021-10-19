@@ -28,13 +28,13 @@ ip link set dev eth2 up
 # swp5 (vSwitch2-vm1) vlan10
 # swp6 (vSwitch2-vm2) vlan20
 
-bridge vlan add dev eth3 vid 10
+bridge vlan add dev eth3 vid 10 untagged
 bridge vlan del dev eth3 vid 1
-bridge vlan add dev eth4 vid 20
+bridge vlan add dev eth4 vid 20 untagged
 bridge vlan del dev eth4 vid 1
-bridge vlan add dev eth5 vid 10
+bridge vlan add dev eth5 vid 10 untagged
 bridge vlan del dev eth5 vid 1 
-bridge vlan add dev eth6 vid 20
+bridge vlan add dev eth6 vid 20 untagged
 bridge vlan del dev eth6 vid 1
 
 # fixing trunks eth1 and eth2
