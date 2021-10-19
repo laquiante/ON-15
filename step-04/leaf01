@@ -1,0 +1,13 @@
+---
+- hosts: leaf01
+  name: push yaml file and activate
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: yaml file
+      copy:
+        src: /home/cumulus/ON-15/inventory/files/leaf01
+        dest: /etc/nvue.d/startup.yaml
+    # ifreload
+    - name: activate changes for Leaf01
+      shell: nv config startup apply
