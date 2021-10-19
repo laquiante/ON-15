@@ -1,0 +1,30 @@
+- set:
+    interface:
+      lo:
+        ip:
+          address:
+            192.168.0.6/32: {}
+        type: loopback
+      swp1:
+        type: swp
+      swp31:
+        type: swp
+      swp32:
+        type: swp
+      swp1.10:
+        ip:
+          address:
+            10.0.110.206/24: {}
+        type: sub
+        base-interface: swp1
+        vlan: 10
+      swp1.20:
+        ip:
+          address:
+            10.0.120.206/24: {}
+        type: sub
+        base-interface: swp1
+        vlan: 20
+    platform:
+      hostname:
+        value: leaf06
