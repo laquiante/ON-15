@@ -1,0 +1,41 @@
+- set:
+    interface:
+      lo:
+        ip:
+          address:
+            192.168.0.4/32: {}
+        type: loopback
+      swp1:
+        type: swp
+        bridge:
+          domain:
+            br_A:
+              access: 10
+      swp2:
+        type: swp
+        bridge:
+          domain:
+            br_B: {}
+      swp3:
+        type: swp
+        bridge:
+          domain:
+            br_A:
+              access: 11
+      swp31:
+        type: swp
+      swp32:
+        type: swp
+    bridge:
+      domain:
+        br_A:
+          vlan:
+            '10': {}
+            '11': {}
+        br_B:
+          vlan:
+            '10': {}
+            '20': {}
+    platform:
+      hostname:
+        value: leaf04
