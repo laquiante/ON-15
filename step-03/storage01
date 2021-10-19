@@ -7,6 +7,6 @@
       copy:
         src: /home/cumulus/ON-15/inventory/files/storage01
         dest: /etc/network/interfaces
-    # aktivieren
+    # ifreload
     - name: activate changes for Storage01
       shell: /sbin/ifreload -a
