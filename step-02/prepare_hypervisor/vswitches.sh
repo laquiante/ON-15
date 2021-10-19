@@ -20,3 +20,19 @@ ip link set dev eth1 master vSwitch1
 ip link set dev eth2 master vSwitch2
 ip link set dev eth1 up
 ip link set dev eth2 up
+
+# 19-OCT-2021: die VLANs fehlen
+# swp1 und 2 sind Trunks
+# swp3 (vSwitch1-vm1) vlan10
+# swp4 (vSwitch1-vm2) vlan20
+# swp5 (vSwitch2-vm1) vlan10
+# swp6 (vSwitch2-vm2) vlan20
+
+bridge vlan add dev swp3 vid 10
+bridge vlan del dev swp3 vid 1
+bridge vlan add dev swp4 vid 20
+bridge vlan del dev swp4 vid 1
+bridge vlan add dev swp5 vid 10
+bridge vlan del dev swp5 vid 1 
+bridge vlan add dev swp6 vid 20
+bridge vlan del dev swp6 vid 1
