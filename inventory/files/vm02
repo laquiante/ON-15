@@ -1,0 +1,13 @@
+auto lo
+iface lo inet loopback
+  address 192.168.0.102/32
+
+auto eth0
+iface eth0 inet dhcp
+    post-up sysctl -w net.ipv6.conf.eth0.accept_ra=2
+
+auto eth1
+iface eth1 
+
+auto eth2
+iface eth2   
