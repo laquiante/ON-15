@@ -15,8 +15,6 @@ iface enp97s0f1 inet static
 
 auto uplink
 iface uplink inet static
-  address 10.0.10.12
-  netmask 255.255.255.0
   mtu 9216
   bond-slaves enp97s0f0 enp97s0f1
   bond-mode 802.3ad
@@ -24,4 +22,14 @@ iface uplink inet static
   bond-lacp-rate 1
   bond-min-links 1
   bond-xmit-hash-policy layer3+4
-  post-up ip route add 10.0.0.0/8 via 10.0.10.254
+
+auto uplink.10
+iface uplink inet static
+  address 10.0.10.12
+  netmask 255.255.255.0
+  
+auto uplink.20
+iface uplink inet static
+  address 10.0.11.12
+  netmask 255.255.255.0
+  post-up ip route add 10.0.0.0/8 via 10.0.11.254
