@@ -38,7 +38,7 @@ bridge vlan add dev eth6 vid 20
 bridge vlan del dev eth6 vid 1
 
 # fixing trunks eth1 and eth2
-bridge vlan add dev eth1 vid10
-bridge vlan add dev eth1 vid20
-bridge vlan add dev eth2 vid10
-bridge vlan add dev eth2 vid20
+bridge vlan add dev eth1 vid 10
+bridge vlan add dev eth1 vid 20
+bridge vlan add dev eth2 vid 10
+bridge vlan add dev eth2 vid 20
