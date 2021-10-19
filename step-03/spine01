@@ -8,6 +8,8 @@
       shell: nv set interface lo ip address 192.168.0.201/32
     - name: enable switchports
       shell: nv set interface swp123-128
+    - name: activate staging buffer
+      shell: nv config apply -y
     - name: iproute2 interface list
       shell: ip -br -j l
       register: iproute2
