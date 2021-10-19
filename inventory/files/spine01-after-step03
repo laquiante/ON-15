@@ -1,0 +1,22 @@
+- set:
+    interface:
+      lo:
+        ip:
+          address:
+            192.168.0.201/32: {}
+        type: loopback
+      swp123:
+        type: swp
+      swp124:
+        type: swp
+      swp125:
+        type: swp
+      swp126:
+        type: swp
+      swp127:
+        type: swp
+      swp128:
+        type: swp
+    platform:
+      hostname:
+        value: spine01
