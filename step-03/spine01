@@ -5,7 +5,7 @@
   gather_facts: no
   tasks:
     - name: set interface loopback IPv4
-    shell: nv set interface lo ip address 192.168.0.201/32
+      shell: nv set interface lo ip address 192.168.0.201/32
     - name: enable switchports
       shell: nv set interface swp123-128
     - name: iproute2 interface list
