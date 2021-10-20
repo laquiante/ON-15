@@ -4,7 +4,7 @@
         snippet:
           ifupdown2_eni:
             vlan10: |
-              address 10.0.10.204
+              address 10.0.10.240/24
               vlan-raw-device br_A
               vlan-id 10
               
