@@ -15,9 +15,9 @@
     - name: yaml file
       copy:
         src: /home/cumulus/ON-15/inventory/files/leaf01-snippet-step04
-        dest: /etc/nvue.d/snipped.yaml
+        dest: /home/cumulus/snippet.yaml
     - name: patch snippet
-      shell: nv config patch /etc/nvue.d/snipped.yaml
+      shell: nv config patch /home/cumulus/snippet.yaml
     # ifreload
     - name: activate config
       shell: nv config apply startup -y
