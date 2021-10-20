@@ -1,4 +1,13 @@
 - set:
+    bridge:
+      domain:
+        br_A:
+          vlan:
+            '10': {}
+            '11': {}
+    platform:
+      hostname:
+        value: leaf01
     vrf:
       Tenant_A: {}
     interface:
@@ -7,6 +16,17 @@
           address:
             192.168.0.1/32: {}
         type: loopback
+      swp1:
+        type: swp
+        bridge:
+          domain:
+            br_A:
+              access: 10
+      swp31:
+        type: swp
+      swp32:
+        type: swp
+        - set:
       vlan10:
         ip:
           address:
@@ -17,7 +37,4 @@
             mac-address: 00:00:5e:00:00:01
         type: svi
         vlan: 10
-      swp31:
-        type: swp
-      swp32:
-        type: swp
+
