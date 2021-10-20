@@ -12,7 +12,7 @@
     - name: activate changes for Leaf01
       shell: nv config startup apply
     # prepare merge
-    - name: L3-interfaces SVI and VRR
+    - name: L3 interfaces SVI and VRR
       copy:
         src: /home/cumulus/ON-15/inventory/files/leaf01-L3
         dest: /tmp/leaf01-L3
