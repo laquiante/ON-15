@@ -17,7 +17,7 @@
         src: /home/cumulus/ON-15/inventory/files/leaf01-L3
         dest: /home/cumulus/leaf01-L3
       copy: 
-        src: /home/cumulus/ON-15/inventory/files/leaf01-L3
+        src: /home/cumulus/ON-15/inventory/files/leaf01-if-unset
         dest: /home/cumulus/leaf01-if-unset
     - name: unset
       shell: nv config patch ./leaf01-if-unset
