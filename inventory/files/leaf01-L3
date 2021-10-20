@@ -1,5 +1,7 @@
+---
 - unset:
     interface:
+      vlan10:
 - set:
     vrf:
       Tenant_A: {}
