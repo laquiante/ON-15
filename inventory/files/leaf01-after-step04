@@ -27,9 +27,6 @@
       swp32:
         type: swp
       vlan10:
-        bridge:
-          domain:
-            br_A:
         link:
           state:
             up: {}
