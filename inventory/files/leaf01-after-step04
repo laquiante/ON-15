@@ -27,6 +27,9 @@
       swp32:
         type: swp
       vlan10:
+        bridge:
+          domain:
+            br_A:
         link:
           state:
             up: {}
@@ -39,4 +42,6 @@
             mac-address: 00:00:5e:00:00:01
         type: svi
         vlan: 10
+        
+
 
