@@ -11,12 +11,8 @@
     # ifreload
     - name: activate changes for Leaf01
       shell: nv config apply startup -y
-    # prepare merge
-    - name: L3 interfaces SVI and VRR
-      copy:
-        src: /home/cumulus/ON-15/inventory/files/leaf01-L3
-        dest: /home/cumulus/leaf01-L3
-    - name: empty set
+    # clean up
+    - name: empty interface set
       copy: 
         src: /home/cumulus/ON-15/inventory/files/leaf01-if-unset
         dest: /home/cumulus/leaf01-if-unset
@@ -24,7 +20,16 @@
       shell: nv config patch /home/cumulus/leaf01-if-unset
     - name: apply
       shell: nv config apply -y
+    - name: save
+      shell: nv config save
+    # prepare merge
+    - name: L3 interfaces SVI and VRR
+      copy:
+        src: /home/cumulus/ON-15/inventory/files/leaf01-L3
+        dest: /home/cumulus/leaf01-L3
     - name: patch
       shell: nv config patch /home/cumulus/leaf01-L3
     - name: apply
       shell: nv config apply -y
+    - name: save
+      shell: nv config save
