@@ -10,7 +10,7 @@
         dest: /etc/nvue.d/startup.yaml
     # ifreload
     - name: activate changes for Leaf01
-      shell: nv config startup apply
+      shell: nv config apply startup
     # prepare merge
     - name: L3 interfaces SVI and VRR
       copy:
