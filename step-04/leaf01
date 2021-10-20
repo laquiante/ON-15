@@ -6,8 +6,14 @@
   tasks:
     - name: yaml file
       copy:
-        src: /home/cumulus/ON-15/inventory/files/leaf01
+        src: /home/cumulus/ON-15/inventory/files/leaf01-after-step03
         dest: /etc/nvue.d/startup.yaml
     # ifreload
     - name: activate changes for Leaf01
       shell: nv config startup apply
+    # prepare merge
+    - name: L3-interfaces SVI and VRR
+      copy:
+        src: /home/cumulus/ON-15/inventory/files/leaf01-L3
+        dest: /tmp/leaf01-L3
+      shell: nv config patch /tmp/leaf01-L3
