@@ -16,4 +16,5 @@
       copy:
         src: /home/cumulus/ON-15/inventory/files/leaf01-L3
         dest: /tmp/leaf01-L3
+    - name: patch
       shell: nv config patch /tmp/leaf01-L3
