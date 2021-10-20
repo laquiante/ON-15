@@ -26,7 +26,6 @@
         type: swp
       swp32:
         type: swp
-        - set:
       vlan10:
         ip:
           address:
