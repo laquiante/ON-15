@@ -15,6 +15,6 @@
     - name: L3 interfaces SVI and VRR
       copy:
         src: /home/cumulus/ON-15/inventory/files/leaf01-L3
-        dest: /tmp/leaf01-L3
+        dest: /home/cumulus/leaf01-L3
     - name: patch
-      shell: nv config patch /tmp/leaf01-L3
+      shell: nv config patch /home/cumulus/leaf01-L3
