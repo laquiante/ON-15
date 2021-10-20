@@ -1,0 +1,14 @@
+- set:
+    vrf:
+      Tenant_A: {}
+    interface:
+      vlan10:
+        ip:
+          address:
+            10.0.10.240/24: {}
+          vrr:
+            address:
+              10.0.10.254/24: {}
+            mac-address: 00:00:5e:00:00:01
+        type: svi
+        vlan: 10
