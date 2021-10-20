@@ -26,24 +26,3 @@
         type: swp
       swp32:
         type: swp
-      vlan10:
-        link:
-          state:
-            up: {}
-        ip:
-          address:
-            10.0.10.240/24: {}
-          vrr:
-            address:
-              10.0.10.254/24: {}
-            mac-address: 00:00:5e:00:00:01
-        type: svi
-        bridge:
-          domain:
-            br_A:
-              vlan:
-                '10': {}
-        
-        
-
-
