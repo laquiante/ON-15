@@ -8,9 +8,10 @@
       copy:
         src: /home/cumulus/ON-15/inventory/files/leaf01-after-step04
         dest: /etc/nvue.d/startup.yaml
+    
     # activate yaml
-    - name: activate Leaf01
-      shell: nv config apply startup -y
+    #- name: activate Leaf01
+    #  shell: nv config apply startup -y
       
     - name: yaml file
       copy:
