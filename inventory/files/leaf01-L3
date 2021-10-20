@@ -2,6 +2,11 @@
     vrf:
       Tenant_A: {}
     interface:
+      lo:
+        ip:
+          address:
+            192.168.0.1/32: {}
+        type: loopback
       vlan10:
         ip:
           address:
