@@ -16,14 +16,14 @@
       copy:
         src: /home/cumulus/ON-15/inventory/files/leaf01-L3
         dest: /home/cumulus/leaf01-L3
-    - name: empty set
-      copy: 
-        src: /home/cumulus/ON-15/inventory/files/leaf01-if-unset
-        dest: /home/cumulus/leaf01-if-unset
-    - name: unset
-      shell: nv config patch /home/cumulus/leaf01-if-unset
-    - name: apply
-      shell: nv config apply -y
+#    - name: empty set
+#      copy: 
+#        src: /home/cumulus/ON-15/inventory/files/leaf01-if-unset
+#        dest: /home/cumulus/leaf01-if-unset
+#    - name: unset
+#      shell: nv config patch /home/cumulus/leaf01-if-unset
+#    - name: apply
+#      shell: nv config apply -y
     - name: patch
       shell: nv config patch /home/cumulus/leaf01-L3
     - name: apply
