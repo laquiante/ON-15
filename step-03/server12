@@ -6,7 +6,7 @@
   tasks:
     - name: e/n/i file and interface manager activation
       copy:
-        src: /home/cumulus/ON-15/inventory/files/server11
+        src: /home/cumulus/ON-15/inventory/files/server12
         dest: /etc/network/interfaces
     # ifreload
     - name: activate changes for Server11
