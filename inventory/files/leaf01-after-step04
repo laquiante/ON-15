@@ -27,6 +27,9 @@
       swp32:
         type: swp
       vlan10:
+        link:
+          state:
+            up: {}
         ip:
           address:
             10.0.10.240/24: {}
