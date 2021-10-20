@@ -12,3 +12,7 @@
             mac-address: 00:00:5e:00:00:01
         type: svi
         vlan: 10
+      swp31:
+        type: swp
+      swp32:
+        type: swp
