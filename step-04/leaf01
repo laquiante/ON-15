@@ -17,6 +17,6 @@
         src: /home/cumulus/ON-15/inventory/files/leaf01-L3
         dest: /home/cumulus/leaf01-L3
     - name: patch
-      shell: nv config patch /home/cumulus/leaf01-L3
-    #- name: apply
-    #  shell: nv config apply -y
+      shell: nv config patch ./leaf01-L3
+    - name: apply
+      shell: nv config apply -y
