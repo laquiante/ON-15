@@ -14,7 +14,7 @@
     - name: unset
       copy:
         src: /home/cumulus/ON-15/inventory/files/leaf01-unset-step04
-        dest: /home/cumulus/leaf01-unset.yaml
+        dest: /home/cumulus/leaf01-unset-step04.yaml
     - name: patch 
       ansible.builtin.shell: 'nv config patch /home/cumulus/leaf01-unset-step04.yaml'
     - name: apply config
