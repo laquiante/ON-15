@@ -16,16 +16,16 @@
         src: /home/cumulus/ON-15/inventory/files/leaf01-unset-step04
         dest: /home/cumulus/leaf01-unset-step04.yaml
     - name: 4 patch 
-      ansible.builtin.shell: 'nv config patch /home/cumulus/leaf01-unset-step04.yaml'
+      ansible.builtin.shell: nv config patch /home/cumulus/leaf01-unset-step04.yaml
     - name: 5 apply config
-      ansible.builtin.shell: 'nv config apply startup -y'  
+      ansible.builtin.shell: nv config apply startup -y  
       
     - name: 6 get patch
       copy:
         src: /home/cumulus/ON-15/inventory/files/leaf01-patch-step04
         dest: /home/cumulus/leaf01-patch-step04.yaml
     - name: 7 patch 
-      ansible.builtin.shell: 'nv config patch /home/cumulus/leaf01-patch-step04.yaml'
+      ansible.builtin.shell: nv config patch /home/cumulus/leaf01-patch-step04.yaml
     - name: 8 apply config
-      ansible.builtin.shell: 'nv config apply startup -y'   
+      ansible.builtin.shell: nv config apply startup -y   
       
