@@ -4,6 +4,11 @@
   become: yes
   gather_facts: no
   tasks:
+    - name: install vlan support
+      apt:
+        name: vlan
+        state: latest
+        update_cache: yes
     - name: e/n/i file and interface manager activation
       copy:
         src: /home/cumulus/ON-15/inventory/files/server12
