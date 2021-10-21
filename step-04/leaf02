@@ -1,5 +1,5 @@
 ---
-- hosts: leaf01
+- hosts: leaf02
   name: push yaml file and activate
   become: yes
   gather_facts: no
