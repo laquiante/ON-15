@@ -1,0 +1,20 @@
+# Leaf01 
+
+- hosts: leaf01
+  name: Leaf01 interfaces
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: copy eni
+      copy: 
+        src: /home/cumulus/ON-15/step-04/leaf01-if
+        dest: /etc/network/interfaces
+    # aktivieren
+    - name: activate changes on Leaf1
+      shell: /sbin/ifreload -a
+    - name: copy frr
+      copy:
+        src: /home/cumulus/ON-15/step-04/leaf-1-frr
+        dest: /etc/frr/frr.conf
+    - name: reload frr
+      ansible.builtin.shell: systemctl reload frr
