@@ -44,4 +44,35 @@
             state:
               up: {}
         vlan: 10
-
+    router:
+      bgp:
+        autonomous-system: 4200000001 
+        enable: on
+        router-id: 192.168.0.1
+    vrf:
+      default:
+        router:
+          bgp:
+            peer:
+              swp31:
+                remote-as: external
+                type: unnumbered
+                address-family:
+                  l2vpn-evpn:
+                    enable: on
+              swp32:
+                remote-as: external
+                type: unnumbered
+                address-family:
+                  l2vpn-evpn:
+                    enable: on
+            enable: on
+            address-family:
+              ipv4-unicast:
+                static-network:
+                  192.168.0.1/32: {}
+                enable: on
+              l2vpn-evpn:
+                enable: on
+    evpn:
+      enable: on
