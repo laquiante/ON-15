@@ -24,9 +24,24 @@ iface eth0 inet dhcp
 
 auto swp1
 iface swp1
+        bridge-access 10
 
 auto swp31
 iface swp31
 
 auto swp32
 iface swp32
+
+auto br_A
+iface br_A
+        bridge-ports swp1
+        bridge-vids 10,20
+        bridge-vlan-aware yes
+
+auto vlan10
+iface vlan10
+        address 10.0.10.240/24
+        address-virtual 00:00:5e:00:00:01 10.0.10.254/24
+        vlan-id 10
+        vlan-raw-device br_A
+
