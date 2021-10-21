@@ -6,31 +6,13 @@
   tasks:
     - name: 1 yaml file
       copy:
-        src: /home/cumulus/ON-15/inventory/files/leaf01-after-step0x
+        src: /home/cumulus/ON-15/inventory/files/leaf01-after-step04
         dest: /etc/nvue.d/startup.yaml
     - name: 2 activate config
-      ansible.builtin.shell: nv config apply startup -y
-      
-    - name: 3 unset
-      copy:
-        src: /home/cumulus/ON-15/inventory/files/leaf01-unset-step04
-        dest: /home/cumulus/leaf01-unset-step04.yaml
-    - name: 4 patch 
-      ansible.builtin.shell: nv config patch /home/cumulus/leaf01-unset-step04.yaml
-    - name: 5 apply config
-      ansible.builtin.shell: nv config apply startup -y  
-      
-    - name: 6 get patch
-      copy:
-        src: /home/cumulus/ON-15/inventory/files/leaf01-patch-step04
-        dest: /home/cumulus/leaf01-patch-step04.yaml
-    - name: 7 patch 
-      ansible.builtin.shell: nv config patch /home/cumulus/leaf01-patch-step04.yaml
-    - name: 8 apply config
-      ansible.builtin.shell: nv config apply startup -y   
-      
+      ansible.builtin.shell: nv config apply startup -y 
     - name: 9 save
       ansible.builtin.shell: nv config save
+    - name: 10 verify
       ansible.builtin.shell: cat /etc/nvue.d/startup.yaml
       register: startup
     - debug: msg={{ startup.stdout }}
