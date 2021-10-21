@@ -2,18 +2,16 @@ hostname leaf02
 log syslog informational
 service integrated-vtysh-config
 !
-router bgp 42000002
+router bgp 4200000002
  bgp router-id 192.168.0.2
  neighbor swp31 interface remote-as external
  neighbor swp32 interface remote-as external
  !
  address-family ipv4 unicast
   network 192.168.0.2/32
-  maximum-paths 64
-  maximum-paths ibgp 64
  exit-address-family
 !
- address-familiy l2vpn evpn
+ address-family l2vpn evpn
   neighbor swp31 activate
   neighbor swp32 activate
   advertise-all-vni
