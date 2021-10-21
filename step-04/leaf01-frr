@@ -11,7 +11,7 @@ router bgp 42000001
   network 192.168.0.1/32
  exit-address-family
 !
- address-familiy l2vpn evpn
+ address-family l2vpn evpn
   neighbor swp31 activate
   neighbor swp32 activate
   advertise-all-vni
