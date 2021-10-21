@@ -10,9 +10,4 @@
         dest: /etc/nvue.d/startup.yaml
     - name: 2 activate config
       ansible.builtin.shell: nv config apply startup -y 
-    - name: 9 save
-      ansible.builtin.shell: nv config save
-    - name: 10 verify
-      ansible.builtin.shell: cat /etc/nvue.d/startup.yaml
-      register: startup
-    - debug: msg={{ startup.stdout }}
+
