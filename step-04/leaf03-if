@@ -39,10 +39,10 @@ iface swp32
 
 auto br_A
 iface br_A
-        bridge-ports swp1,swp3
+        bridge-ports swp1
         bridge-vids 10,11
         bridge-vlan-aware yes
-        
+
 auto br_B
 iface br_B
         bridge-ports swp2
