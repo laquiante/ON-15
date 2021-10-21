@@ -29,3 +29,5 @@
     - name: 8 apply config
       ansible.builtin.shell: nv config apply startup -y   
       
+    - name: 9 save
+      ansible.builtin.shell: nv config save
