@@ -10,3 +10,12 @@
         dest: /etc/nvue.d/startup.yaml
     - name: activate config
       shell: nv config apply startup -y
+    - name: get patch
+      copy:
+        src: /home/cumulus/ON-15/inventory/files/leaf01-patch-step04
+        dest: /home/cumulus/snippet.yaml
+    - name: patch snippet
+      shell: nv config patch /home/cumulus/snippet.yaml
+    - name: apply config
+      shell: nv config apply startup -y   
+      
