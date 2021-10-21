@@ -1,14 +1,4 @@
 - set:
-    bridge:
-      domain:
-        br_A:
-          vlan:
-            '10': {}
-            '11': {}
-#        br_B:
-#          vlan:
-#            '10': {}
-#            '20': {}
     platform:
       hostname:
         value: leaf01
@@ -44,6 +34,16 @@
             state:
               up: {}
         vlan: 10
+    bridge:
+      domain:
+        br_A:
+          vlan:
+            '10': {}
+            '11': {}
+#        br_B:
+#          vlan:
+#            '10': {}
+#            '20': {}
     router:
       bgp:
         autonomous-system: 4200000001 
