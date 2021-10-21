@@ -11,35 +11,35 @@
           address:
             192.168.0.1/32: {}
         type: loopback
-      swp1:
-        type: swp
-        bridge:
-          domain:
-            br_A:
-              access: 10
+#      swp1:
+#        type: swp
+#        bridge:
+#          domain:
+#            br_A:
+#              access: 10
       swp31:
         type: swp
       swp32:
         type: swp
-      vlan10:
-        type: svi
-        base-interface: br_A
-        ip:
-          address:
-            10.0.10.240/24: {}
-          vrr:
-            address:
-              10.0.10.254/24: {}
-            mac-address: 00:00:5e:00:00:01
-            state:
-              up: {}
-        vlan: 10
-    bridge:
-      domain:
-        br_A:
-          vlan:
-            '10': {}
-            '11': {}
+#      vlan10:
+#        type: svi
+#        base-interface: br_A
+#        ip:
+#          address:
+#            10.0.10.240/24: {}
+#          vrr:
+#            address:
+#              10.0.10.254/24: {}
+#            mac-address: 00:00:5e:00:00:01
+#            state:
+#              up: {}
+#        vlan: 10
+#    bridge:
+#      domain:
+#        br_A:
+#          vlan:
+#            '10': {}
+#            '11': {}
 #        br_B:
 #          vlan:
 #            '10': {}
