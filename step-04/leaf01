@@ -4,28 +4,28 @@
   become: yes
   gather_facts: no
   tasks:
-    - name: yaml file
+    - name: 1 yaml file
       copy:
         src: /home/cumulus/ON-15/inventory/files/leaf01-after-step0x
         dest: /etc/nvue.d/startup.yaml
-    - name: activate config
+    - name: 2 activate config
       ansible.builtin.shell: nv config apply startup -y
       
-    - name: unset
+    - name: 3 unset
       copy:
         src: /home/cumulus/ON-15/inventory/files/leaf01-unset-step04
         dest: /home/cumulus/leaf01-unset-step04.yaml
-    - name: patch 
+    - name: 4 patch 
       ansible.builtin.shell: 'nv config patch /home/cumulus/leaf01-unset-step04.yaml'
-    - name: apply config
+    - name: 5 apply config
       ansible.builtin.shell: 'nv config apply startup -y'  
       
-    - name: get patch
+    - name: 6 get patch
       copy:
         src: /home/cumulus/ON-15/inventory/files/leaf01-patch-step04
         dest: /home/cumulus/leaf01-patch-step04.yaml
-    - name: patch 
+    - name: 7 patch 
       ansible.builtin.shell: 'nv config patch /home/cumulus/leaf01-patch-step04.yaml'
-    - name: apply config
+    - name: 8 apply config
       ansible.builtin.shell: 'nv config apply startup -y'   
       
