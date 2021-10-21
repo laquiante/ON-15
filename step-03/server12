@@ -32,10 +32,10 @@
     #  shell: ip addr add 10.0.20.12/24 dev uplink.20
 
     - name: ip(route2)
-      shell: ip link add link uplink name uplink.10 type vlan id 10
-      shell: ip link add link uplink name uplink.20 type vlan id 20
-      shell: ip link set up dev uplink.10
-      shell: ip link set up dev uplink.20
-      shell: ip addre add 10.0.10.12/24 dev uplink.10
-      shell: ip addre add 10.0.20.12/24 dev uplink.20
+      command: /sbin/ip link add link uplink name uplink.10 type vlan id 10
+      command: /sbin/ip link add link uplink name uplink.20 type vlan id 20
+      command: /sbin/ip link set up dev uplink.10
+      command: /sbin/ip link set up dev uplink.20
+      command: /sbin/ip addre add 10.0.10.12/24 dev uplink.10
+      command: /sbin/ip addre add 10.0.20.12/24 dev uplink.20
       
