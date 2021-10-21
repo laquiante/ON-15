@@ -9,9 +9,14 @@
       copy: 
         src: /home/cumulus/ON-15/step-04/leaf01-if
         dest: /etc/network/interfaces
-    # aktivieren
     - name: activate changes on Leaf1
       shell: /sbin/ifreload -a
+    - name: fix daemons to be on the safe side
+      copy: 
+        src: /home/cumulus/ON-15/inventory/files/daemons
+        dest: /etc/frr/daemons
+    - name: restart frr
+      ansible.builtin.shell: systemctl restart frr       
     - name: copy frr
       copy:
         src: /home/cumulus/ON-15/step-04/leaf01-frr
