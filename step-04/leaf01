@@ -13,9 +13,9 @@
     - name: get patch
       copy:
         src: /home/cumulus/ON-15/inventory/files/leaf01-patch-step04
-        dest: /home/cumulus/snippet.yaml
-    - name: patch snippet
-      shell: nv config patch /home/cumulus/snippet.yaml
+        dest: /home/cumulus/leaf01-patch-step04.yaml
+    - name: patch 
+      shell: nv config patch /home/cumulus/leaf01-patch-step04.yaml
     - name: apply config
       shell: nv config apply startup -y   
       
