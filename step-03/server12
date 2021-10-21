@@ -29,4 +29,4 @@
       with_items:
       - add link uplink name uplink.20 type vlan id 20
       - set up dev uplink.20
-      shell: ip link add 10.0.20.12/24 dev uplink.20
+      shell: ip addr add 10.0.20.12/24 dev uplink.20
