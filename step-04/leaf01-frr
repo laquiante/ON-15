@@ -5,18 +5,18 @@ service integrated-vtysh-config
 router bgp 4200000001
  bgp router-id 192.168.0.1
  neighbor swp31 interface remote-as external
- neighbor swp31 advertisement-interval 0
- neighbor swp31 timers 3 9
- neighbor swp31 timers connect 10
  neighbor swp32 interface remote-as external
- neighbor swp32 advertisement-interval 0
- neighbor swp32 timers 3 9
- neighbor swp32 timers connect 10
  !
  address-family ipv4 unicast
   network 192.168.0.1/32
   maximum-paths 64
   maximum-paths ibgp 64
+ exit-address-family
+!
+ address-familiy l2vpn evpn
+  neighbor swp31 activate
+  neighbor swp32 activate
+  advertise-all-vni
  exit-address-family
 !
 line vty
