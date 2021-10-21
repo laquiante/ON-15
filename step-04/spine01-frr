@@ -2,7 +2,7 @@ hostname spine01
 log syslog informational
 service integrated-vtysh-config
 !
-router bgp 42000201
+router bgp 4200000201
  bgp router-id 192.168.0.201
  neighbor swp123 interface remote-as external
  neighbor swp124 interface remote-as external
