@@ -9,13 +9,13 @@
         src: /home/cumulus/ON-15/inventory/files/leaf01-after-step04
         dest: /etc/nvue.d/startup.yaml
     - name: activate config
-      ansible.buildin.shell: nv config apply startup -y
+      ansible.buildin.shell: 'nv config apply startup -y'
     - name: get patch
       copy:
         src: /home/cumulus/ON-15/inventory/files/leaf01-patch-step04
         dest: /home/cumulus/leaf01-patch-step04.yaml
     - name: patch 
-      ansible.buildin.shell: nv config patch /home/cumulus/leaf01-patch-step04.yaml
+      ansible.buildin.shell: 'nv config patch /home/cumulus/leaf01-patch-step04.yaml'
     - name: apply config
-      ansible.buildin.shell: nv config apply startup -y   
+      ansible.buildin.shell: 'nv config apply startup -y'   
       
