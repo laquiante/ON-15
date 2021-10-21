@@ -12,67 +12,67 @@
     platform:
       hostname:
         value: leaf01
-    vrf:
-      Tenant_A: {}
-      Tenant_B: {}
-    interface:
-      lo:
-        ip:
-          address:
-            192.168.0.1/32: {}
-        type: loopback
-      swp1:
-        type: swp
-        bridge:
-          domain:
-            br_A:
-              access: 10
-      swp31:
-        type: swp
-      swp32:
-        type: swp
-      vlan10:
-        type: svi
-        base-interface: br_A
-        ip:
-          address:
-            10.0.10.240/24: {}
-          vrr:
-            address:
-              10.0.10.254/24: {}
-            mac-address: 00:00:5e:00:00:01
-            state:
-              up: {}
-        vlan: 10
-    router:
-      bgp:
-        autonomous-system: 4200000001 
-        enable: on
-        router-id: 192.168.0.1
-    vrf:
-      default:
-        router:
-          bgp:
-            peer:
-              swp31:
-                remote-as: external
-                type: unnumbered
-                address-family:
-                  l2vpn-evpn:
-                    enable: on
-              swp32:
-                remote-as: external
-                type: unnumbered
-                address-family:
-                  l2vpn-evpn:
-                    enable: on
-            enable: on
-            address-family:
-              ipv4-unicast:
-                static-network:
-                  192.168.0.1/32: {}
-                enable: on
-              l2vpn-evpn:
-                enable: on
-    evpn:
-      enable: on
+#    vrf:
+#      Tenant_A: {}
+#      Tenant_B: {}
+#    interface:
+#      lo:
+#        ip:
+#          address:
+#            192.168.0.1/32: {}
+#        type: loopback
+#      swp1:
+#        type: swp
+#        bridge:
+#          domain:
+#            br_A:
+#              access: 10
+#      swp31:
+#        type: swp
+#      swp32:
+#        type: swp
+#      vlan10:
+#        type: svi
+#        base-interface: br_A
+#        ip:
+#          address:
+#            10.0.10.240/24: {}
+#          vrr:
+#            address:
+#              10.0.10.254/24: {}
+#            mac-address: 00:00:5e:00:00:01
+#            state:
+#              up: {}
+#        vlan: 10
+#    router:
+#      bgp:
+#        autonomous-system: 4200000001 
+#        enable: on
+#        router-id: 192.168.0.1
+#    vrf:
+#      default:
+#        router:
+#          bgp:
+#            peer:
+#              swp31:
+#                remote-as: external
+#                type: unnumbered
+#                address-family:
+#                  l2vpn-evpn:
+#                    enable: on
+#              swp32:
+#                remote-as: external
+#                type: unnumbered
+#                address-family:
+#                  l2vpn-evpn:
+#                    enable: on
+#            enable: on
+#            address-family:
+#              ipv4-unicast:
+#                static-network:
+#                  192.168.0.1/32: {}
+#                enable: on
+#              l2vpn-evpn:
+#                enable: on
+#    evpn:
+#      enable: on
