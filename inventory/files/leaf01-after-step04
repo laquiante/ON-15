@@ -37,9 +37,9 @@
         ip:
           address:
             10.0.10.240/24: {}
-        vrr:
-          address:
-            10.0.10.254/24: {}
-            mac-address: 00:00:5e:00:00:01
+          vrr:
+            address:
+              10.0.10.254/24: {}
+              mac-address: 00:00:5e:00:00:01
         vlan: 10
 
