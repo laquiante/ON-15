@@ -1,0 +1,56 @@
+    router:
+      bgp:
+        autonomous-system: 4200000201 
+        enable: on
+        router-id: 192.168.0.201
+    vrf:
+      default:
+        router:
+          bgp:
+            peer:
+              swp123:
+                remote-as: external
+                type: unnumbered
+                address-family:
+                  l2vpn-evpn:
+                    enable: on
+              swp124:
+                remote-as: external
+                type: unnumbered
+                address-family:
+                  l2vpn-evpn:
+                    enable: on
+              swp125:
+                remote-as: external
+                type: unnumbered
+                address-family:
+                  l2vpn-evpn:
+                    enable: on
+              swp126:
+                remote-as: external
+                type: unnumbered
+                address-family:
+                  l2vpn-evpn:
+                    enable: on
+              swp127:
+                remote-as: external
+                type: unnumbered
+                address-family:
+                  l2vpn-evpn:
+                    enable: on
+              swp128:
+                remote-as: external
+                type: unnumbered
+                address-family:
+                  l2vpn-evpn:
+                    enable: on
+            enable: on
+            address-family:
+              ipv4-unicast:
+                static-network:
+                  192.168.0.201/32: {}
+                enable: on
+              l2vpn-evpn:
+                enable: on
+    evpn:
+      enable: on
