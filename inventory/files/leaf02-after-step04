@@ -36,7 +36,7 @@
         base-interface: br_A
         ip:
           address:
-            10.0.10.240/24: {}
+            10.0.10.241/24: {}
           vrr:
             address:
               10.0.10.254/24: {}
