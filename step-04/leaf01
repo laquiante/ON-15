@@ -31,3 +31,6 @@
       
     - name: 9 save
       ansible.builtin.shell: nv config save
+      ansible.builtin.shell: cat /etc/nvue.d/startup.yaml
+      register: startup
+    - debug: msg={{ startup.stdout }}
