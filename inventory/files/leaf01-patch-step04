@@ -1,4 +1,10 @@
 - set:
+    bridge:
+      domain:
+        br_B:
+          vlan:
+            '10': {}
+            '11': {}
     interface:
       vlan10:
         type: svi
