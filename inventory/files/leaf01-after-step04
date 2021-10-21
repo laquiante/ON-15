@@ -5,11 +5,16 @@
           vlan:
             '10': {}
             '11': {}
+        br_B:
+          vlan:
+            '10': {}
+            '11': {}
     platform:
       hostname:
         value: leaf01
     vrf:
       Tenant_A: {}
+      Tenant_B: {}
     interface:
       lo:
         ip:
@@ -26,3 +31,18 @@
         type: swp
       swp32:
         type: swp
+      vlan10:
+        type: svi
+        base-interface: br_A
+        ip:
+          address:
+            192.168.10.1/24: {}
+        vlan: 10
+      vlan110:
+        type: svi
+        base-interface: br_B
+        ip:
+          address:
+            192.168.10.1/24: {}
+        vlan:10
+          
