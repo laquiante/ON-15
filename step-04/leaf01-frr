@@ -9,8 +9,6 @@ router bgp 42000001
  !
  address-family ipv4 unicast
   network 192.168.0.1/32
-  maximum-paths 64
-  maximum-paths ibgp 64
  exit-address-family
 !
  address-familiy l2vpn evpn
