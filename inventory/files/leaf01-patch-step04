@@ -5,13 +5,13 @@
         base-interface: br_A
         ip:
           address:
-            192.168.10.2/24: {}
+            192.168.10.1/24: {}
         vlan: 10
       vlan110:
         type: svi
         base-interface: br_B
         ip:
           address:
-            192.168.10.2/24: {}
+            192.168.10.1/24: {}
         vlan: 10
               
