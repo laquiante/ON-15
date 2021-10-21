@@ -101,3 +101,108 @@
         dest: /etc/frr/frr.conf
     - name: reload frr
       ansible.builtin.shell: systemctl reload frr
+      
+# Leaf03 
+
+- hosts: leaf03
+  name: Leaf03 interfaces
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: copy eni
+      copy: 
+        src: /home/cumulus/ON-15/step-04/leaf03-if
+        dest: /etc/network/interfaces
+    - name: activate changes on Leaf2
+      shell: /sbin/ifreload -a
+    - name: fix daemons to be on the safe side
+      copy: 
+        src: /home/cumulus/ON-15/inventory/files/daemons
+        dest: /etc/frr/daemons
+    - name: restart frr
+      ansible.builtin.shell: systemctl restart frr       
+    - name: copy frr
+      copy:
+        src: /home/cumulus/ON-15/step-04/leaf03-frr
+        dest: /etc/frr/frr.conf
+    - name: reload frr
+      ansible.builtin.shell: systemctl reload frr
+
+# Leaf04 
+
+- hosts: leaf04
+  name: Leaf04 interfaces
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: copy eni
+      copy: 
+        src: /home/cumulus/ON-15/step-04/leaf04-if
+        dest: /etc/network/interfaces
+    - name: activate changes on Leaf2
+      shell: /sbin/ifreload -a
+    - name: fix daemons to be on the safe side
+      copy: 
+        src: /home/cumulus/ON-15/inventory/files/daemons
+        dest: /etc/frr/daemons
+    - name: restart frr
+      ansible.builtin.shell: systemctl restart frr       
+    - name: copy frr
+      copy:
+        src: /home/cumulus/ON-15/step-04/leaf04-frr
+        dest: /etc/frr/frr.conf
+    - name: reload frr
+      ansible.builtin.shell: systemctl reload frr
+      
+# Leaf05 
+
+- hosts: leaf05
+  name: Leaf05 interfaces
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: copy eni
+      copy: 
+        src: /home/cumulus/ON-15/step-04/leaf05-if
+        dest: /etc/network/interfaces
+    - name: activate changes on Leaf5
+      shell: /sbin/ifreload -a
+    - name: fix daemons to be on the safe side
+      copy: 
+        src: /home/cumulus/ON-15/inventory/files/daemons
+        dest: /etc/frr/daemons
+    - name: restart frr
+      ansible.builtin.shell: systemctl restart frr       
+    - name: copy frr
+      copy:
+        src: /home/cumulus/ON-15/step-04/leaf05-frr
+        dest: /etc/frr/frr.conf
+    - name: reload frr
+      ansible.builtin.shell: systemctl reload frr
+      
+      
+# Leaf06 
+
+- hosts: leaf06
+  name: Leaf06 interfaces
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: copy eni
+      copy: 
+        src: /home/cumulus/ON-15/step-04/leaf06-if
+        dest: /etc/network/interfaces
+    - name: activate changes on Leaf6
+      shell: /sbin/ifreload -a
+    - name: fix daemons to be on the safe side
+      copy: 
+        src: /home/cumulus/ON-15/inventory/files/daemons
+        dest: /etc/frr/daemons
+    - name: restart frr
+      ansible.builtin.shell: systemctl restart frr       
+    - name: copy frr
+      copy:
+        src: /home/cumulus/ON-15/step-04/leaf06-frr
+        dest: /etc/frr/frr.conf
+    - name: reload frr
+      ansible.builtin.shell: systemctl reload frr
