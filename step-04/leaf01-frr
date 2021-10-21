@@ -2,7 +2,7 @@ hostname leaf01
 log syslog informational
 service integrated-vtysh-config
 !
-router bgp 4200000001
+router bgp 42000001
  bgp router-id 192.168.0.1
  neighbor swp31 interface remote-as external
  neighbor swp32 interface remote-as external
