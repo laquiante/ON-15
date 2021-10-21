@@ -31,6 +31,7 @@
     #  - set up dev uplink.20
     #  shell: ip addr add 10.0.20.12/24 dev uplink.20
 
+    # workaround for the fix LOL
     - name: ip(route2)
       command: /sbin/ip link add link uplink name uplink.10 type vlan id 10
     - name: pause
