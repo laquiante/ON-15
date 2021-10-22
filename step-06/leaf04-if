@@ -126,7 +126,7 @@ iface l3_vni_A
 
 auto l3_svi
 iface l3_svi
-    hwaddress 44:38:39:01:01:01
+    hwaddress 44:38:39:01:01:04
     vlan-id 1001
     vlan-raw-device bridge
     vrf Tentant_A
