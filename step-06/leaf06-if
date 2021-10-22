@@ -70,7 +70,7 @@ iface l3_vni_A
 
 auto l3_svi
 iface l3_svi
-    hwaddress 44:38:39:01:01:01
+    hwaddress 44:38:39:01:01:06
     vlan-id 1001
     vlan-raw-device br_A
     vrf Tenant_A
