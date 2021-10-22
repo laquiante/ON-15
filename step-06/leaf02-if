@@ -42,8 +42,8 @@ iface swp32
 
 auto br_A
 iface br_A
-        bridge-ports bond1 vxlan10 l2_vni_A
-        bridge-vids 10,20
+        bridge-ports bond1 vxlan10 l3_vni_A
+        bridge-vids 10 20 1001
         bridge-vlan-aware yes
 
 auto vlan10
