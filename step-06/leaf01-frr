@@ -2,6 +2,10 @@ hostname leaf01
 log syslog informational
 service integrated-vtysh-config
 !
+vrf Tenant_1
+ vni 1001
+ exit-vrf
+! 
 interface swp31
   evpn mh uplink
 !
