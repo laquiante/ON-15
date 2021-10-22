@@ -2,8 +2,20 @@ hostname leaf02
 log syslog informational
 service integrated-vtysh-config
 !
+interface swp31
+  evpn mh uplink
+!
+interface swp32
+  evpn mh uplink
+!
+interface bond1
+  evpn mh es-df-pref 50000
+  evpn mh es-id 1
+  evpn mh es-sys-mac 44:38:39:FF:FF:01
+!
 router bgp 4200000002
  bgp router-id 192.168.0.2
+ bgp bestpath as-path multipath-relax
  neighbor swp31 interface remote-as external
  neighbor swp32 interface remote-as external
  !
