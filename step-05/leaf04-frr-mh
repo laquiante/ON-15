@@ -1,5 +1,7 @@
+frr defaults datacenter
 hostname leaf04
 log syslog informational
+zebra nexthop proto only
 service integrated-vtysh-config
 !
 interface bond1
@@ -10,12 +12,12 @@ interface bond1
 interface bond2
   evpn mh es-df-pref 42
   evpn mh es-id 2
-  evpn mh es-sys-mac 44:38:39:FF:FF:12
+  evpn mh es-sys-mac 44:38:39:FF:FF:11
 !
 interface bond3
   evpn mh es-df-pref 42
   evpn mh es-id 3
-  evpn mh es-sys-mac 44:38:39:FF:FF:13
+  evpn mh es-sys-mac 44:38:39:FF:FF:11
 !   
 router bgp 4200000004
  bgp router-id 192.168.0.4
