@@ -3,7 +3,7 @@ log syslog informational
 service integrated-vtysh-config
 !
 vrf Tenant_A
-  vni 1001
+  vni 10010
   exit-vrf
 !
 router bgp 4200000005
