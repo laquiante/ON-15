@@ -17,6 +17,12 @@ auto Tenant_B
 iface Tenant_B
         address 192.168.0.5/32
         vrf-table auto
+        
+auto br_A
+iface br_A
+        bridge-ports vxlan10
+        bridge-vids 10 11
+        bridge-vlan-aware yes        
 
 auto eth0
 iface eth0 inet dhcp
