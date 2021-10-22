@@ -214,12 +214,12 @@
   become: yes
   gather_facts: no
   tasks:
-#    - name: copy eni
-#      copy: 
-#        src: /home/cumulus/ON-15/step-04/vm01-if
-#        dest: /etc/network/interfaces
-#    - name: activate changes on vm01
-#      shell: /sbin/ifreload -a
+    - name: copy eni
+      copy: 
+        src: /home/cumulus/ON-15/step-04/vm01-if
+        dest: /etc/network/interfaces
+    - name: activate changes on vm01
+      shell: /sbin/ifreload -a
     - name: fix daemons to be on the safe side
       copy: 
         src: /home/cumulus/ON-15/inventory/files/hdaemons
@@ -240,12 +240,12 @@
   become: yes
   gather_facts: no
   tasks:
-#    - name: copy eni
-#      copy: 
-#        src: /home/cumulus/ON-15/step-04/vm01-if
-#        dest: /etc/network/interfaces
-#    - name: activate changes on vm01
-#      shell: /sbin/ifreload -a
+    - name: copy eni
+      copy: 
+        src: /home/cumulus/ON-15/step-04/vm02-if
+        dest: /etc/network/interfaces
+    - name: activate changes on vm02
+      shell: /sbin/ifreload -a
     - name: fix daemons to be on the safe side
       copy: 
         src: /home/cumulus/ON-15/inventory/files/hdaemons
