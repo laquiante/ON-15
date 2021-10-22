@@ -129,4 +129,4 @@ iface l3_svi
     hwaddress 44:38:39:01:01:03
     vlan-id 1001
     vlan-raw-device br_A
-    vrf Tentant_A
+    vrf Tenant_A
