@@ -76,3 +76,12 @@ iface vlan11
         address-virtual 00:00:5e:00:00:01 10.0.11.254/24
         vlan-id 11
         vlan-raw-device br_A
+
+auto vxlan10
+iface vxlan10
+    bridge-access 10
+    bridge-arp-nd-suppress on
+    bridge-learning off
+    mstpctl-bpduguard yes
+    mstpctl-portbpdufilter yes
+    vxlan-id 10
