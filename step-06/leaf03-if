@@ -51,7 +51,7 @@ iface bond3
     bridge-access 11
     bond-slaves swp3
     es-sys-mac 44:38:39:FF:FF:11
-    bond-lacp-bypass-allow yes
+#    bond-lacp-bypass-allow yes
     mstpctl-bpduguard yes
     mstpctl-portadminedge yes
 
