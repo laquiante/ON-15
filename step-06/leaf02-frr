@@ -1,3 +1,4 @@
+frr defaults datacenter
 hostname leaf02
 log syslog informational
 service integrated-vtysh-config
