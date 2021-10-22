@@ -22,7 +22,6 @@ iface eth0 inet dhcp
 
 auto swp1
 iface swp1
-        bridge-access 10
         
 auto swp2
 iface swp2
@@ -30,6 +29,32 @@ iface swp2
 auto swp3
 iface swp3
         bridge-access 11
+        
+auto bond1
+iface bond1
+    bridge-access 10
+    bond-slaves swp1
+    es-sys-mac 44:38:39:FF:FF:11
+    bond-lacp-bypass-allow yes
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    
+auto bond2
+iface bond2
+    bond-slaves swp2
+    es-sys-mac 44:38:39:FF:FF:12
+    bond-lacp-bypass-allow yes
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
+    
+auto bond3
+iface bond3
+    bridge-access 11
+    bond-slaves swp3
+    es-sys-mac 44:38:39:FF:FF:13
+    bond-lacp-bypass-allow yes
+    mstpctl-bpduguard yes
+    mstpctl-portadminedge yes
 
 auto swp31
 iface swp31
@@ -39,7 +64,7 @@ iface swp32
 
 auto br_A
 iface br_A
-        bridge-ports swp1 swp3 vxlan10
+        bridge-ports bond1 bond2 bond3 vxlan10
         bridge-vids 10 11
         bridge-vlan-aware yes
 
