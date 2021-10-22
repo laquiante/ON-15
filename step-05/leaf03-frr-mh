@@ -18,12 +18,12 @@ interface bond1
 interface bond2
   evpn mh es-df-pref 50000
   evpn mh es-id 2
-  evpn mh es-sys-mac 44:38:39:FF:FF:12
+  evpn mh es-sys-mac 44:38:39:FF:FF:11
 !
 interface bond3
   evpn mh es-df-pref 50000
   evpn mh es-id 3
-  evpn mh es-sys-mac 44:38:39:FF:FF:13
+  evpn mh es-sys-mac 44:38:39:FF:FF:11
 !  
 router bgp 4200000003
  bgp router-id 192.168.0.3
