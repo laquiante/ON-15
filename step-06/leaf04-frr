@@ -2,6 +2,10 @@ hostname leaf04
 log syslog informational
 service integrated-vtysh-config
 !
+vrf Tenant_A
+  vni 1001
+  exit-vrf
+!
 interface bond1
   evpn mh es-df-pref 42
   evpn mh es-id 1
