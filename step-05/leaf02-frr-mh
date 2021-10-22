@@ -9,7 +9,7 @@ interface swp32
   evpn mh uplink
 !
 interface bond1
-  evpn mh es-df-pref 50000
+  evpn mh es-df-pref 42
   evpn mh es-id 1
   evpn mh es-sys-mac 44:38:39:FF:FF:01
 !
