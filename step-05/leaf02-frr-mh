@@ -1,5 +1,7 @@
+frr defaults datacenter
 hostname leaf02
 log syslog informational
+zebra nexthop proto only
 service integrated-vtysh-config
 !
 interface swp31
