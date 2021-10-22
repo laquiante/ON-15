@@ -10,12 +10,12 @@ iface mgmt
 
 auto Tenant_A
 iface Tenant_A
-        adderss 192.168.0.5/32
+        address 192.168.0.5/32
         vrf-table auto
 
 auto Tenant_B
 iface Tenant_B
-        adderss 192.168.0.5/32
+        address 192.168.0.5/32
         vrf-table auto
 
 auto eth0
