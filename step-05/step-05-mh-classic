@@ -12,6 +12,13 @@
     - name: activate changes on leaf01
       shell: /sbin/ifreload -a     
 
+    - name: copy frr
+      copy:
+        src: /home/cumulus/ON-15/step-04/leaf01-frr-mh
+        dest: /etc/frr/frr.conf
+    - name: reload frr
+      ansible.builtin.shell: systemctl reload frr
+
 # Leaf02 
 
 - hosts: leaf02
@@ -25,6 +32,13 @@
         dest: /etc/network/interfaces
     - name: activate changes on leaf02
       shell: /sbin/ifreload -a  
+      
+    - name: copy frr
+      copy:
+        src: /home/cumulus/ON-15/step-04/leaf02-frr-mh
+        dest: /etc/frr/frr.conf
+    - name: reload frr
+      ansible.builtin.shell: systemctl reload frr
          
 # Leaf03 
 
@@ -38,7 +52,14 @@
         src: /home/cumulus/ON-15/step-05/leaf03-if-mh
         dest: /etc/network/interfaces
     - name: activate changes on leaf03
-      shell: /sbin/ifreload -a  
+      shell: /sbin/ifreload -a 
+      
+    - name: copy frr
+      copy:
+        src: /home/cumulus/ON-15/step-04/leaf03-frr-mh
+        dest: /etc/frr/frr.conf
+    - name: reload frr
+      ansible.builtin.shell: systemctl reload frr
 
 # Leaf04
 
@@ -54,6 +75,12 @@
     - name: activate changes on leaf04
       shell: /sbin/ifreload -a  
       
+    - name: copy frr
+      copy:
+        src: /home/cumulus/ON-15/step-04/leaf04-frr-mh
+        dest: /etc/frr/frr.conf
+    - name: reload frr
+      ansible.builtin.shell: systemctl reload frr      
 # Leaf05 no bonds no MH
 
 - hosts: leaf05
@@ -66,7 +93,7 @@
         src: /home/cumulus/ON-15/step-05/leaf05-if
         dest: /etc/network/interfaces
     - name: activate changes on leaf05
-      shell: /sbin/ifreload -a  
+      shell: /sbin/ifreload -a 
       
 # Leaf06 no bonds no MH
 
