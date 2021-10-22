@@ -48,4 +48,5 @@ iface vxlan10
     bridge-learning off
     mstpctl-bpduguard yes
     mstpctl-portbpdufilter yes
+    vxlan-local-tunnelip 192.168.0.6
     vxlan-id 10
