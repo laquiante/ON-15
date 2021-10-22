@@ -57,3 +57,19 @@ iface vxlan10
     mstpctl-portbpdufilter yes
     vxlan-local-tunnelip 192.168.0.6
     vxlan-id 10
+    
+auto l3_vni_A
+iface l3_vni_A
+    bridge-access 1001
+    bridge-arp-nd-suppress on
+    bridge-learning off
+    mstpctl-bpduguard yes
+    mstpctl-portbpdufilter yes
+    vxlan-id 10010
+
+auto l3_svi
+iface l3_svi
+    hwaddress 44:38:39:01:01:01
+    vlan-id 1001
+    vlan-raw-device bridge
+    vrf Teantant_A
