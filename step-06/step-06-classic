@@ -7,14 +7,105 @@
   tasks:
     - name: copy eni
       copy: 
-        src: /home/cumulus/ON-15/step-05/leaf01-if-mh
+        src: /home/cumulus/ON-15/step-06/leaf01-if
         dest: /etc/network/interfaces
     - name: activate changes on leaf01
       shell: /sbin/ifreload -a     
 
     - name: copy frr
       copy:
-        src: /home/cumulus/ON-15/step-05/leaf01-frr-mh
+        src: /home/cumulus/ON-15/step-06/leaf01-frr
         dest: /etc/frr/frr.conf
     - name: reload frr
       ansible.builtin.shell: systemctl reload frr
+      
+# Leaf02 
+
+- hosts: leaf02
+  name: Leaf02 interfaces and routing
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: copy eni
+      copy: 
+        src: /home/cumulus/ON-15/step-06/leaf02-if
+        dest: /etc/network/interfaces
+    - name: activate changes on leaf02
+      shell: /sbin/ifreload -a  
+      
+    - name: copy frr
+      copy:
+        src: /home/cumulus/ON-15/step-06/leaf02-frr
+        dest: /etc/frr/frr.conf
+    - name: reload frr
+      ansible.builtin.shell: systemctl reload frr
+         
+# Leaf03 
+
+- hosts: leaf03
+  name: Leaf03 interfaces and routing
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: copy eni
+      copy: 
+        src: /home/cumulus/ON-15/step-06/leaf03-if
+        dest: /etc/network/interfaces
+    - name: activate changes on leaf03
+      shell: /sbin/ifreload -a 
+      
+    - name: copy frr
+      copy:
+        src: /home/cumulus/ON-15/step-06/leaf03-frr
+        dest: /etc/frr/frr.conf
+    - name: reload frr
+      ansible.builtin.shell: systemctl reload frr
+
+# Leaf04
+
+- hosts: leaf04
+  name: Leaf04 interfaces and routing
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: copy eni
+      copy: 
+        src: /home/cumulus/ON-15/step-06/leaf04-if
+        dest: /etc/network/interfaces
+    - name: activate changes on leaf04
+      shell: /sbin/ifreload -a  
+      
+    - name: copy frr
+      copy:
+        src: /home/cumulus/ON-15/step-06/leaf04-frr
+        dest: /etc/frr/frr.conf
+    - name: reload frr
+      ansible.builtin.shell: systemctl reload frr      
+      
+# Leaf05 no bonds 
+
+- hosts: leaf05
+  name: Leaf05 interfaces and routing
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: copy eni
+      copy: 
+        src: /home/cumulus/ON-15/step-06/leaf05-if
+        dest: /etc/network/interfaces
+    - name: activate changes on leaf05
+      shell: /sbin/ifreload -a 
+      
+# Leaf06 
+
+- hosts: leaf06
+  name: Leaf06 interfaces and routing
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: copy eni
+      copy: 
+        src: /home/cumulus/ON-15/step-06/leaf06-if
+        dest: /etc/network/interfaces
+    - name: activate changes on leaf06
+      shell: /sbin/ifreload -a  
