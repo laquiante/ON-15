@@ -96,6 +96,13 @@
     - name: activate changes on leaf05
       shell: /sbin/ifreload -a 
       
+    - name: copy frr
+      copy:
+        src: /home/cumulus/ON-15/step-06/leaf05-frr
+        dest: /etc/frr/frr.conf
+    - name: reload frr
+      ansible.builtin.shell: systemctl reload frr  
+      
 # Leaf06 
 
 - hosts: leaf06
@@ -109,3 +116,10 @@
         dest: /etc/network/interfaces
     - name: activate changes on leaf06
       shell: /sbin/ifreload -a  
+
+    - name: copy frr
+      copy:
+        src: /home/cumulus/ON-15/step-06/leaf06-frr
+        dest: /etc/frr/frr.conf
+    - name: reload frr
+      ansible.builtin.shell: systemctl reload frr  
