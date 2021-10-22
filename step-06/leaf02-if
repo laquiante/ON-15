@@ -77,5 +77,5 @@ auto l3_svi
 iface l3_svi
     hwaddress 44:38:39:01:01:02
     vlan-id 1001
-    vlan-raw-device bridge
+    vlan-raw-device br_A
     vrf Tentant_A
