@@ -34,9 +34,18 @@ auto swp1.20
 iface swp1.20
         address 10.0.120.206/24
         vrf Tenant_A
-
+        
 auto swp31
 iface swp31
 
 auto swp32
 iface swp32
+
+auto vxlan10
+iface vxlan10
+    bridge-access 10
+    bridge-arp-nd-suppress on
+    bridge-learning off
+    mstpctl-bpduguard yes
+    mstpctl-portbpdufilter yes
+    vxlan-id 10
