@@ -58,7 +58,7 @@ iface vlan10
 auto vxlan10
 iface vxlan10
     bridge-access 10
-    bridge-arp-nd-suppress on
+    bridge-arp-nd-suppress off
     bridge-learning off
     mstpctl-bpduguard yes
     mstpctl-portbpdufilter yes
@@ -68,7 +68,7 @@ iface vxlan10
 auto l3_vni_A
 iface l3_vni_A
     bridge-access 1001
-    bridge-arp-nd-suppress on
+    bridge-arp-nd-suppress off
     bridge-learning off
     mstpctl-bpduguard yes
     mstpctl-portbpdufilter yes
