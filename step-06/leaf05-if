@@ -57,3 +57,19 @@ iface swp31
 
 auto swp32
 iface swp32
+
+auto l3_vni_A
+iface l3_vni_A
+    bridge-access 1001
+    bridge-arp-nd-suppress on
+    bridge-learning off
+    mstpctl-bpduguard yes
+    mstpctl-portbpdufilter yes
+    vxlan-id 10010
+
+auto l3_svi
+iface l3_svi
+    hwaddress 44:38:39:01:01:05
+    vlan-id 1001
+    vlan-raw-device bridge
+    vrf Teantant_A
