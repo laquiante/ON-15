@@ -63,7 +63,7 @@ iface swp32
 
 auto br_A
 iface br_A
-        bridge-ports bond1 bond3 l3_vni_A
+        bridge-ports bond1 bond3 vxlan10 l3_vni_A
         bridge-vids 10 11 1001
         bridge-vlan-aware yes
 
@@ -128,5 +128,5 @@ auto l3_svi
 iface l3_svi
     hwaddress 44:38:39:01:01:03
     vlan-id 1001
-    vlan-raw-device bridge
+    vlan-raw-device br_A
     vrf Tentant_A
