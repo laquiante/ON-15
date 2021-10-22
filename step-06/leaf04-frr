@@ -1,5 +1,7 @@
+frr defaults datacenter
 hostname leaf04
 log syslog informational
+zebra nexthop proto only
 service integrated-vtysh-config
 !
 vrf Tenant_A
