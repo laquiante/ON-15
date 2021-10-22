@@ -63,7 +63,7 @@ iface swp32
 
 auto br_A
 iface br_A
-        bridge-ports bond1 bond3 vxlan10 l3_vni_A
+        bridge-ports bond1 bond3 vxlan10 vxlan11 l3_vni_A
         bridge-vids 10 11 1001
         bridge-vlan-aware yes
 
@@ -114,6 +114,16 @@ iface vxlan10
     mstpctl-portbpdufilter yes
     vxlan-local-tunnelip 192.168.0.3
     vxlan-id 10
+
+auto vxlan11
+iface vxlan11
+    bridge-access 11
+    bridge-arp-nd-suppress on
+    bridge-learning off
+    mstpctl-bpduguard yes
+    mstpctl-portbpdufilter yes
+    vxlan-local-tunnelip 192.168.0.3
+    vxlan-id 11
     
 auto l3_vni_A
 iface l3_vni_A
