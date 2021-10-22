@@ -5,7 +5,7 @@ zebra nexthop proto only
 service integrated-vtysh-config
 !
 vrf Tenant_A
-  vni 1001
+  vni 10010
   exit-vrf
 !
 interface bond1
