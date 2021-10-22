@@ -23,6 +23,7 @@ router bgp 4200000005 vrf Tenant_A
  !
  address-family ipv4 unicast
   network 192.168.0.5/32
+  network 10.1.10.0/24
  exit-address-family
 !
 router bgp 4200000005 vrf Tenant_B
@@ -31,6 +32,7 @@ router bgp 4200000005 vrf Tenant_B
  !
  address-family ipv4 unicast
   network 192.168.0.5/32
+  network 10.1.20.0/24
  exit-address-family
 !
 line vty
