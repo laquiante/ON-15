@@ -6,14 +6,14 @@
   tasks:
     - name: copy eni
       copy: 
-        src: /home/cumulus/ON-15/step-06/"{{ inventory_hostname }}-if"
+        src: /home/cumulus/ON-15/step-06/{{ inventory_hostname }}-if
         dest: /etc/network/interfaces
     - name: activate changes on leaf01
       shell: /sbin/ifreload -a     
 
     - name: copy frr
       copy:
-        src: /home/cumulus/ON-15/step-06/"{{ inventory_hostname }}-frr"
+        src: /home/cumulus/ON-15/step-06/{{ inventory_hostname }}-frr
         dest: /etc/frr/frr.conf
     - name: reload frr
       ansible.builtin.shell: systemctl reload frr
