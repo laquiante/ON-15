@@ -1,6 +1,14 @@
 # Switche
 
-- hosts: "{{ inventory-hostname }}"
+- hosts: "{{ items }}"
+  with_items:
+  - leaf01
+  - leaf02
+  - leaf03
+  - leaf04
+  - leaf05
+  - leaf06
+  
   name: TOR
   become: yes
   gather_facts: no
