@@ -3,6 +3,7 @@
   name: TOR
   become: yes
   gather_facts: no
+  
   vars:
     leaf01:
       lo_ip: "192.168.1.1/32"
