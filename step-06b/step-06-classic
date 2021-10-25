@@ -1,15 +1,7 @@
 # Switche
 
-target_devices:
-  - leaf01
-  - leaf02
-  - leaf03
-  - leaf04
-  - leaf05
-  - lear06
-
 - hosts: {{ inventory-hostname }}
-  name: Leaf Switch 
+  name: TOR
   become: yes
   gather_facts: no
   tasks:
