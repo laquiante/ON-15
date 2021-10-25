@@ -1,13 +1,6 @@
-# Switche
-
-- hosts: "{{ items }}"
-  with_items:
-  - leaf01
-  - leaf02
-  - leaf03
-  - leaf04
-  - leaf05
-  - leaf06
+---
+- hosts: {{ items }}
+  with_items: "{{ groups['leaf'] }}"
   
   name: TOR
   become: yes
