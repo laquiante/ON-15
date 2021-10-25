@@ -1,7 +1,5 @@
 ---
-- hosts: {{ items }}
-  with_items: "{{ groups['leaf'] }}"
-  
+- hosts: leaf  
   name: TOR
   become: yes
   gather_facts: no
