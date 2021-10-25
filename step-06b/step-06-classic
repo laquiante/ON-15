@@ -1,6 +1,6 @@
 # Switche
 
-- hosts: {{ inventory-hostname }}
+- hosts: "{{ inventory-hostname }}"
   name: TOR
   become: yes
   gather_facts: no
