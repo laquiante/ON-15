@@ -1,6 +1,6 @@
 auto lo
 iface lo inet loopback
-        address 192.168.0.1/32
+        address 1{{ lo_ip }}/32
         vxlan-local-tunnelip 192.168.0.1
 
 auto mgmt
