@@ -7,6 +7,8 @@
   vars:
     leaf01:
       lo_ip: "192.168.1.1/32"
+    leaf02:
+      lo_ip: "192.168.2.2/32"
   
   tasks:
     - name: copy eni
