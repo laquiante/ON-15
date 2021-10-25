@@ -1,6 +1,6 @@
 auto lo
 iface lo inet loopback
-        address "{{ inventory_hostname.lo_ip }}"
+        address {{ inventory_hostname.lo_ip }}
         vxlan-local-tunnelip 192.168.0.1
 
 auto mgmt
