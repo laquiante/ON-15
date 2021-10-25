@@ -1,0 +1,76 @@
+auto lo
+iface lo inet loopback
+        address 192.168.0.6/32
+        vxlan-local-tunnelip 192.168.0.6
+
+auto mgmt
+iface mgmt
+        address 127.0.0.6/8
+        address ::1/128
+        vrf-table auto
+
+auto Tenant_A
+iface Tenant_A
+        address 192.168.0.6/32
+        vrf-table auto
+
+auto Tenant_B
+iface Tenant_B
+        address 192.168.0.6/32
+        vrf-table auto
+        
+auto br_A
+iface br_A
+        hwaddress ether 00:11:22:33:44:06
+        bridge-ports vxlan10 l3_vni_A
+        bridge-vids 10 11
+        bridge-vlan-aware yes        
+
+auto eth0
+iface eth0 inet dhcp
+        vrf mgmt
+
+auto swp1
+iface swp1
+
+auto swp1.10
+iface swp1.10
+        address 10.0.110.206/24
+        vrf Tenant_A
+        
+auto swp1.20
+iface swp1.20
+        address 10.0.120.206/24
+        vrf Tenant_A
+        
+auto swp31
+iface swp31
+
+auto swp32
+iface swp32
+
+auto vxlan10
+iface vxlan10
+    bridge-access 10
+    bridge-arp-nd-suppress off
+    bridge-learning off
+    mstpctl-bpduguard yes
+    mstpctl-portbpdufilter yes
+    vxlan-local-tunnelip 192.168.0.6
+    vxlan-id 10
+    
+auto l3_vni_A
+iface l3_vni_A
+    bridge-access 1001
+    bridge-arp-nd-suppress off
+    bridge-learning off
+    mstpctl-bpduguard yes
+    mstpctl-portbpdufilter yes
+    vxlan-id 10010
+
+auto l3_svi
+iface l3_svi
+    hwaddress 44:38:39:01:01:06
+    vlan-id 1001
+    vlan-raw-device br_A
+    vrf Tenant_A
