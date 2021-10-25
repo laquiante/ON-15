@@ -1,5 +1,15 @@
 # Switche
 
+target_devices:
+  - leaf01
+  - leaf02
+  - leaf03
+  - leaf04
+  - leaf05
+  - lear06
+
+Referenci
+
 - hosts: leaf
   name: Leaf Switch 
   become: yes
