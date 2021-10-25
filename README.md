@@ -10,3 +10,7 @@ Step-04: draft
 Step-05: draft 
   Layer 2
   Layer 2 + Multi-Homing
+
+Step-06: draft
+
+Step-06b: optimized
