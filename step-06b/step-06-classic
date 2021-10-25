@@ -8,9 +8,7 @@ target_devices:
   - leaf05
   - lear06
 
-Referenci
-
-- hosts: leaf
+- hosts: {{ inventory-hostname }}
   name: Leaf Switch 
   become: yes
   gather_facts: no
