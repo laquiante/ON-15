@@ -1,4 +1,9 @@
 ---
+
+- name: Include a play after another play
+  import_playbook: /home/cumulus/ON-15/step06c/step-06.yaml
+  
+  
 - hosts: task-leaf  
   name: TOR
   become: yes
