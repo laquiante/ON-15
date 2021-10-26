@@ -1,6 +1,5 @@
 ---
- vars_prompt:
-
+  vars_prompt:
     - name: steps
       prompt: do you want to configure leave01 (True or False)?
       private: no
