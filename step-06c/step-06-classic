@@ -35,9 +35,6 @@
 # *****             Don't change anything below             *****
 # ***************************************************************
 
-  {% if steps is True %}
   - name: Include the play for all other switches than leaf01
     import_playbook: /home/cumulus/ON-15/step-06c/step-06.yaml
-  #{% else %} 
-  #False 
-  {% endif %}
+
