@@ -5,7 +5,7 @@
   gather_facts: no
   vars:
     ansible_python_interpreter: /usr/bin/python3
-    path_inv: /home/cumulus/ON-15/inventory/files/
+    path_inv: "/home/cumulus/ON-15/inventory/files/"
   tasks:
     - name: stop NCLU
       shell: systemctl stop netd
@@ -23,7 +23,7 @@
   tasks:
     - copy:
 #        src: /home/cumulus/ON-15/inventory/files/daemons
-        src: "{{ path_inv }}"daemons
+        src: "{{path_inv}}"daemons
         dest: /etc/frr/daemons
     - shell: systemctl restart frr
     
