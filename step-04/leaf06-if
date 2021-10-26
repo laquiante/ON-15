@@ -27,12 +27,12 @@ iface swp1
 
 auto swp1.10
 iface swp1.10
-        address 10.0.110.206/24
+        address 10.1.110.206/24
         vrf Tenant_A
         
 auto swp1.20
 iface swp1.20
-        address 10.0.120.206/24
+        address 10.1.120.206/24
         vrf Tenant_A
 
 auto swp31
