@@ -1,4 +1,16 @@
 ---
+ vars_prompt:
+
+    - name: steps
+      prompt: do you want to configure leave01 (True or False)?
+      private: no
+      default: False
+      
+      
+# ***************************************************************
+# *****             Don't change anything above             *****
+# ***************************************************************      
+      
 - hosts: leaf01
   name: task-step
   become: yes
@@ -25,3 +37,4 @@
 
 - name: Include the play for all other switches than leaf01
   import_playbook: /home/cumulus/ON-15/step-06c/step-06.yaml
+  when: steps is True
