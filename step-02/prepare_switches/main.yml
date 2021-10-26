@@ -3,6 +3,8 @@
   name: disable NCLU and enable NVUE
   become: yes
   gather_facts: no
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
   tasks:
     - name: stop NCLU
       shell: systemctl stop netd
