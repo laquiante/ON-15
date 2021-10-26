@@ -28,7 +28,7 @@
     loopback_ips:
       lo_ip: 8.8.8.8/32
   
-   tasks:
+  tasks:
     - name: copy eni
       template: 
         src: /home/cumulus/ON-15/step-06c/leaf01-if.j2
