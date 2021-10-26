@@ -23,7 +23,7 @@
   tasks:
     - copy:
 #        src: /home/cumulus/ON-15/inventory/files/daemons
-        src: "{{path_inv}}"daemons
+        src: "{{path_inv}}"+daemons
         dest: /etc/frr/daemons
     - shell: systemctl restart frr
     
