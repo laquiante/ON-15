@@ -26,7 +26,20 @@
   
 #  vars:
 #    lo_ip: 8.8.8.8/32
-  
+interface-information:
+- name: lo
+  lo_ip: 9.9.9.9/32
+
+#---
+#asm_disk_detail:
+#- name: OCR
+#  path: "/dev/sde1"
+#- name: DATA
+#  path: "/dev/sdf1"
+#- name: ARCH
+#  path: "/dev/sdg1"
+
+
   tasks:
     - name: render file via template
       template: 
