@@ -4,8 +4,8 @@ service integrated-vtysh-config
 !
 router bgp 4200000011
  bgp router-id 192.168.0.101
- neighbor 10.1.10.101 remote-as external
- neighbor 10.1.110.101 remote-as external
+ neighbor 10.1.10.205 remote-as external
+ neighbor 10.1.110.206 remote-as external
  !
  address-family ipv4 unicast
   network 192.168.0.101/32
