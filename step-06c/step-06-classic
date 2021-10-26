@@ -3,21 +3,7 @@
   name: TOR
   become: yes
   gather_facts: no
-  
-  vars:
-    leaf01:
-      lo_ip: 192.168.1.1/32
-    leaf02:
-      lo_ip: 192.168.2.2/32
-    leaf03:
-      lo_ip: 192.168.3.1/32
-    leaf04:
-      lo_ip: 192.168.4.2/32
-    leaf05:
-      lo_ip: 192.168.5.1/32
-    leaf06:
-      lo_ip: 192.168.6.2/32
-  
+    
   tasks:
     - name: copy eni
       copy: 
