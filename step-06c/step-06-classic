@@ -31,7 +31,7 @@
   tasks:
     - name: copy eni
       template: 
-        src: /home/cumulus/ON-15/step-06c/leaf01-if.j2
+        src: /home/cumulus/ON-15/step-06c/template/leaf01-if.j2
         dest: /etc/network/interfaces
     - name: activate changes on leaf01
       shell: /sbin/ifreload -a     
