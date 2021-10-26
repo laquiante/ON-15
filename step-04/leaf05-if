@@ -25,15 +25,32 @@ iface eth0 inet dhcp
 auto swp1
 iface swp1
 
-auto swp1.10
-iface swp1.10
-        address 10.1.10.205/24
-        vrf Tenant_B
+# testing 26.10.2021 21:18
+
+auto br_A
+iface br_A
+  bridge-ports swp1
+  bridge-vids 10 20
+  bridge-vlan-aware yes
+
+auto vlan10
+iface vlan10
+  address 10.1.10.205/24
+  vlan-id 10
+  vlan-raw-device br_A
+  
+#auto swp1.10
+#iface swp1.10
+#        address 10.1.10.205/24
+#        vrf Tenant_B
+# fehler sollte A sein
         
-auto swp1.20
-iface swp1.20
-        address 10.1.20.205/24
-        vrf Tenant_B
+#auto swp1.20
+#iface swp1.20
+#        address 10.1.20.205/24
+#        vrf Tenant_B
+
+
 auto swp31
 iface swp31
 
