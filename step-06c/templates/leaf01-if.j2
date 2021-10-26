@@ -1,10 +1,6 @@
 auto lo
 iface lo inet loopback
-{% for loopback in lo_ip|default() %}
-    address {{ loopback }}
-{% else %}
-    address 127.0.0.1
-{% endfor %}
+    address {{ leaf01.ip_lo }}
 
 auto mgmt
 iface mgmt
