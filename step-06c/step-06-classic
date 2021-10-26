@@ -25,7 +25,8 @@
   gather_facts: no
   
   vars:
-    lo_ip: 8.8.8.8/32
+    loopback_ips:
+      lo_ip: 8.8.8.8/32
   
    tasks:
     - name: copy eni
