@@ -1,5 +1,5 @@
 ---
-- hosts: leaf  
+- hosts: task-leaf  
   name: TOR
   become: yes
   gather_facts: no
@@ -18,4 +18,26 @@
         dest: /etc/frr/frr.conf
     - name: reload frr
       ansible.builtin.shell: systemctl reload frr
-      
+  
+- hosts: leaf01  
+  name: task-step
+  become: yes
+  gather_facts: no
+  
+  vars:
+    lo_ip: 8.8.8.8/32
+  
+   tasks:
+    - name: copy eni
+      template: 
+        src: /home/cumulus/ON-15/step-06c/leaf01-if.j2
+        dest: /etc/network/interfaces
+    - name: activate changes on leaf01
+      shell: /sbin/ifreload -a     
+
+    - name: copy frr
+      copy:
+        src: /home/cumulus/ON-15/step-06c/leaf01-frr
+        dest: /etc/frr/frr.conf
+    - name: reload frr
+      ansible.builtin.shell: systemctl reload frr  
