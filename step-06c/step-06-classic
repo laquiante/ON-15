@@ -24,8 +24,8 @@
   become: yes
   gather_facts: no
   
-  vars:
-    lo_ip: 8.8.8.8/32
+#  vars:
+#    lo_ip: 8.8.8.8/32
   
   tasks:
     - name: render file via template
