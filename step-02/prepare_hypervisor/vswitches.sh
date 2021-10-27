@@ -1,4 +1,4 @@
-# etwas spass muss sein
+# 
 # 24-SEP-2021 : 20:27
 #
 # create the bridges
@@ -42,3 +42,6 @@ bridge vlan add dev eth1 vid 10
 bridge vlan add dev eth1 vid 20
 bridge vlan add dev eth2 vid 10
 bridge vlan add dev eth2 vid 20
+
+# fixing arp and nd
+
