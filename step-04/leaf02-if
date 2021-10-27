@@ -44,3 +44,4 @@ iface vlan10
         address-virtual 00:00:5e:00:00:01 10.0.10.254/24
         vlan-id 10
         vlan-raw-device br_A
+        vrf Tenant_A
