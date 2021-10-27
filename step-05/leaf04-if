@@ -55,6 +55,7 @@ iface vlan10
         address-virtual 00:00:5e:00:00:01 10.0.10.254/24
         vlan-id 10
         vlan-raw-device br_A
+        vrf Tenant_A
         
 auto vlan110
 iface vlan110
@@ -62,13 +63,15 @@ iface vlan110
         address-virtual 00:00:5e:00:00:01 10.0.10.254/24
         vlan-id 10
         vlan-raw-device br_B
+        vrf Tenant_B
         
 auto vlan120
 iface vlan120
         address 10.0.20.244/24
         address-virtual 00:00:5e:00:00:01 10.0.20.254/24
         vlan-id 20
-        vlan-raw-device br_B        
+        vlan-raw-device br_B  
+        vrf Tenant_B
         
 auto vlan11
 iface vlan11
@@ -76,6 +79,7 @@ iface vlan11
         address-virtual 00:00:5e:00:00:01 10.0.11.254/24
         vlan-id 11
         vlan-raw-device br_A
+        vrf Tenant_A
 
 auto vxlan10
 iface vxlan10
