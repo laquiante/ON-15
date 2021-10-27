@@ -1,6 +1,6 @@
 ---
 - hosts: vm02
-  name: create bond, set loopback and activate changes
+  name: set loopback and activate changes
   become: yes
   gather_facts: no
   tasks:
