@@ -3,9 +3,25 @@
   name: create vSwitch1 and vSwitch2
   become: yes
   gather_facts: false
-  tasks:
-    - copy:
-        src: /home/cumulus/ON-15/step-02/prepare_hypervisor/vswitches.sh
-        dest: /home/cumulus/vswitches.sh
-        mode: u+xrw
-    - shell: ./vswitches.sh
+  
+# needs a bit of care
+  
+#tasks:
+#    - copy:
+#        src: /home/cumulus/ON-15/step-02/prepare_hypervisor/vswitches.sh
+#        dest: /home/cumulus/vswitches.sh
+#        mode: u+xrw
+#    - shell: ./vswitches.sh
+
+    - name: copy if-manager config
+      copy: 
+        src: /home/cumulus/ON-15/step-02/ifupdown2.conf
+        dest: /etc/network/ifupdown2/ifupdown2.conf
+
+    - name: copy e/n/i
+      copy: 
+        src: /home/cumulus/ON-15/step-02/hypervisor01-if
+        dest: /etc/network/interfaces
+
+    - name: activate changes on hypervisor01
+      shell: /sbin/ifreload -a
