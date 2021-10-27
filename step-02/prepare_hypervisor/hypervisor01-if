@@ -1,0 +1,41 @@
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+    post-up sysctl -w net.ipv6.conf.eth0.accept_ra=2
+
+auto eth1
+iface eth1
+
+auto eth2
+iface eth2
+
+auto eth3
+iface eth3
+    bridge-access 10
+
+auto eth4
+iface eth4
+    bridge-access 20
+
+auto eth5
+iface eth5
+    bridge-access 10
+
+auto eth6
+iface eth6
+    bridge-access 20
+
+
+auto vSwitch1
+iface vSwitch1
+    bridge-ports eth1 eth3 eth4
+    bridge-vids 10 20
+    bridge-vlan-aware yes
+
+auto vSwitch2
+iface vSwitch2
+    bridge-ports eth2 eth5 eth6
+    bridge-vids 10 20
+    bridge-vlan-aware yes
