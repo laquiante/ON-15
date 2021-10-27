@@ -36,7 +36,7 @@ iface br_C
 
 auto vlan10
 iface vlan10
-#  address 10.1.10.205/24
+  address 10.1.10.205/24
   vlan-id 10
   vlan-raw-device br_C
   vrf Tenant_A
