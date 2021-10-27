@@ -23,7 +23,7 @@ router bgp 4200000005
 !
 router bgp 4200000005 vrf Tenant_A
  bgp router-id 192.168.0.5
- neighbor swp1.10 interface remote-as external
+ neighbor 10.1.10.101 remote-as external
  !
  address-family ipv4 unicast
   network 192.168.0.5/32
@@ -32,7 +32,7 @@ router bgp 4200000005 vrf Tenant_A
 !
 router bgp 4200000005 vrf Tenant_B
  bgp router-id 192.168.0.5
- neighbor swp1.20 interface remote-as external
+ neighbor 10.1.20.102 interface remote-as external
  !
  address-family ipv4 unicast
   network 192.168.0.5/32
