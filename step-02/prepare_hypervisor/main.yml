@@ -15,7 +15,7 @@
 
     - name: copy if-manager config
       copy: 
-        src: /home/cumulus/ON-15/step-02/ifupdown2.conf
+        src: /home/cumulus/ON-15/step-02/prepare_hypervisor/ifupdown2.conf
         dest: /etc/network/ifupdown2/ifupdown2.conf
 
     - name: copy e/n/i
