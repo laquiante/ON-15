@@ -20,7 +20,7 @@
 
     - name: copy e/n/i
       copy: 
-        src: /home/cumulus/ON-15/step-02/hypervisor01-if
+        src: /home/cumulus/ON-15/step-02/prepare_hypervisor/hypervisor01-if
         dest: /etc/network/interfaces
 
     - name: activate changes on hypervisor01
