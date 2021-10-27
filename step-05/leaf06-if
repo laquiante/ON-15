@@ -27,7 +27,7 @@ iface Tenant_B
 
 auto br_C
 iface br_C
-  bridge-ports vxlan10
+  bridge-ports swp1 vxlan10
   bridge-vids 10 20
   bridge-vlan-aware yes
 
