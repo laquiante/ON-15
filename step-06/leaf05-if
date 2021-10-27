@@ -19,12 +19,32 @@ iface Tenant_B
         address 192.168.0.5/32
         vrf-table auto
         
-auto br_A
-iface br_A
-        hwaddress ether 00:11:22:33:44:05
-        bridge-ports vxlan10 l3_vni_A
-        bridge-vids 10 11 
-        bridge-vlan-aware yes        
+#auto br_A
+#iface br_A
+#        hwaddress ether 00:11:22:33:44:05
+#        bridge-ports vxlan10 l3_vni_A
+#        bridge-vids 10 11 
+#        bridge-vlan-aware yes   
+        
+auto br_C
+iface br_C
+  bridge-ports swp1 vxlan10 l3_vni_A
+  bridge-vids 10 20
+  bridge-vlan-aware yes
+
+auto vlan10
+iface vlan10
+  address 10.1.10.205/24
+  vlan-id 10
+  vlan-raw-device br_C
+  vrf Tenant_A
+  
+auto vlan20
+iface vlan20
+  address 10.1.20.205/24
+  vlan-id 20
+  vlan-raw-device br_C
+  vrf Tenant_B
 
 auto eth0
 iface eth0 inet dhcp
@@ -33,15 +53,15 @@ iface eth0 inet dhcp
 auto swp1
 iface swp1
 
-auto swp1.10
-iface swp1.10
-        address 10.0.10.205/24
-        vrf Tenant_B
+#auto swp1.10
+#iface swp1.10
+#        address 10.0.10.205/24
+#        vrf Tenant_B
         
-auto swp1.20
-iface swp1.20
-        address 10.0.20.205/24
-        vrf Tenant_B
+#auto swp1.20
+#iface swp1.20
+#        address 10.0.20.205/24
+#        vrf Tenant_B
         
 auto vxlan10
 iface vxlan10
@@ -72,5 +92,5 @@ auto l3_svi
 iface l3_svi
     hwaddress 44:38:39:01:01:05
     vlan-id 1001
-    vlan-raw-device br_A
+    vlan-raw-device br_C
     vrf Tenant_A
