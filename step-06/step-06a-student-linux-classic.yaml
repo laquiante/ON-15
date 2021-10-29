@@ -1,3 +1,7 @@
+# ***************************************************************
+# *****             student working area below              *****
+# ***************************************************************
+
 # Leaf01 
 
 - hosts: leaf01
@@ -6,18 +10,25 @@
   gather_facts: no
   tasks:
     - name: copy eni
-      copy: 
-        src: /home/cumulus/ON-15/step-06/leaf01-if
+      ****: 
+      # *******************************************
+      # ***** use/edit file leaf01-student-if *****
+      # *******************************************
+        src: /home/cumulus/ON-15/step-06/leaf01-student-if
         dest: /etc/network/interfaces
     - name: activate changes on leaf01
-      shell: /sbin/ifreload -a     
+      shell: /sbin/******** -a     
 
     - name: copy frr
-      copy:
+      ****:
         src: /home/cumulus/ON-15/step-06/leaf01-frr
-        dest: /etc/frr/frr.conf
+        dest: /***/***/********
     - name: reload frr
-      ansible.builtin.shell: systemctl reload frr
+      ansible.builtin.shell: systemctl ****** frr
+      
+# ***************************************************************
+# *****             Don't change anything below             *****
+# ***************************************************************
       
 # Leaf02 
 
