@@ -1,5 +1,6 @@
 {% set ip_lo = "10.0.10.1/32" %}
 {% set access_vlan = "10" %}
+{% set tenant = "Tenant_A" %}
 
 auto lo
 iface lo inet loopback
@@ -11,8 +12,8 @@ iface mgmt
         address ::1/128
         vrf-table auto
 
-auto Tenant_A
-iface Tenant_A
+auto {{ tenant }}
+iface {{ tenant }}
         vrf-table auto
 
 auto Tenant_B
@@ -55,7 +56,7 @@ iface vlan10
         address-virtual 00:00:5e:00:00:01 10.0.10.254/24
         vlan-id {{ access_vlan }}
         vlan-raw-device br_A
-        vrf Tenant_A
+        vrf {{ tenant }}
         
 auto vxlan10
 iface vxlan10
@@ -81,4 +82,4 @@ iface l3_svi
     hwaddress 44:38:39:01:01:01
     vlan-id 1001
     vlan-raw-device br_A
-    vrf Tenant_A
+    vrf {{ tenant }}
