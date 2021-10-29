@@ -31,7 +31,10 @@
   gather_facts: false
   tasks:
     - copy:
-        src: /home/cumulus/ON-15/inventory/files/topology.dot
+# *******************************************
+# ****** use/edit topology-student.dot ******
+# *******************************************
+        src: /home/cumulus/ON-15/inventory/files/topology-student.dot
         dest: /etc/ptm.d/topology.dot
         mode: '0644'
         owner: 'root'
