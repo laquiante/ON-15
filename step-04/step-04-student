@@ -26,8 +26,10 @@
       ansible.builtin.shell: systemctl restart frr       
     - name: copy frr
       copy:
-      
-        src: /home/cumulus/ON-15/step-04/leaf01-frr
+# *******************************************
+# ***** use/edit file leaf01-student-frr *****
+# *******************************************      
+        src: /home/cumulus/ON-15/step-04/leaf01-student-frr
         dest: /etc/frr/frr.conf
     - name: reload frr
       ansible.builtin.shell: systemctl reload frr
