@@ -1,4 +1,5 @@
 {% set ip_lo = "10.0.10.1/32" %}
+{% set access_vlan = "10" %}
 
 auto lo
 iface lo inet loopback
@@ -29,7 +30,7 @@ iface swp1
         
 auto bond1
 iface bond1
-    bridge-access 10
+    bridge-access {{ access_vlan }}
     bond-slaves swp1
     es-sys-mac 44:38:39:FF:FF:01
     bond-lacp-bypass-allow yes
@@ -45,20 +46,20 @@ iface swp32
 auto br_A
 iface br_A
         bridge-ports bond1 vxlan10 l3_vni_A
-        bridge-vids 10 20 
+        bridge-vids {{ access_vlan }} 20 
         bridge-vlan-aware yes
 
 auto vlan10
 iface vlan10
         address 10.0.10.240/24
         address-virtual 00:00:5e:00:00:01 10.0.10.254/24
-        vlan-id 10
+        vlan-id {{ access_vlan }}
         vlan-raw-device br_A
         vrf Tenant_A
         
 auto vxlan10
 iface vxlan10
-    bridge-access 10
+    bridge-access {{ access_vlan }}
     bridge-arp-nd-suppress off
     bridge-learning off
     mstpctl-bpduguard yes
