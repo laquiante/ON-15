@@ -11,9 +11,9 @@
   tasks:
     - name: copy eni
       ****: 
-      # *******************************************
-      # ***** use/edit file leaf01-student-if *****
-      # *******************************************
+# *******************************************
+# ***** use/edit file leaf01-student-if *****
+# *******************************************
         src: /home/cumulus/ON-15/step-06/leaf01-student-if
         dest: /etc/network/interfaces
     - name: activate changes on leaf01
@@ -21,7 +21,10 @@
 
     - name: copy frr
       ****:
-        src: /home/cumulus/ON-15/step-06/leaf01-frr
+# *******************************************
+# ***** use/edit file leaf01-student-frr ****
+# *******************************************
+        src: /home/cumulus/ON-15/step-06/leaf01-student-frr
         dest: /***/***/********
     - name: reload frr
       ansible.builtin.shell: systemctl ****** frr
