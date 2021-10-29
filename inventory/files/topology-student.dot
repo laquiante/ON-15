@@ -1,0 +1,41 @@
+graph "ALQ" {
+
+# pod 01
+****************** -- ***************
+"storage01":"eth2" -- "leaf02":"swp1"
+
+# pod 02
+"server11":"enp97s0f0" -- "leaf03":"swp1"
+"server11":"enp97s0f1" -- "leaf04":"swp1"
+
+"server12":"enp97s0f0" -- "leaf03":"swp2"
+"server12":"enp97s0f1" -- "leaf04":"swp2"
+
+"server13":"enp97s0f0" -- "leaf03":"swp3"
+"server13":"enp97s0f1" -- "leaf04":"swp3"
+
+# pod 03
+"hypervisor01":"eth1" -- "leaf05":"swp1"
+"hypervisor01":"eth2" -- "leaf06":"swp1"
+
+"hypervisor01":"eth3" -- "vm01":"eth1"
+"hypervisor01":"eth4" -- "vm02":"eth1"
+"hypervisor01":"eth5" -- "vm01":"eth2"
+"hypervisor01":"eth6" -- "vm02":"eth2"
+
+# leaf-spine
+****************** -- ****************
+"spine01":"swp124" -- "leaf02":"swp31"
+"spine01":"swp125" -- "leaf03":"swp31"
+"spine01":"swp126" -- "leaf04":"swp31"
+"spine01":"swp127" -- "leaf05":"swp31"
+"spine01":"swp128" -- "leaf06":"swp31"
+
+****************** -- ****************
+"spine02":"swp124" -- "leaf02":"swp32"
+"spine02":"swp125" -- "leaf03":"swp32"
+"spine02":"swp126" -- "leaf04":"swp32"
+"spine02":"swp127" -- "leaf05":"swp32"
+"spine02":"swp128" -- "leaf06":"swp32"
+
+}
