@@ -1,0 +1,94 @@
+# Leaf01 
+
+# ***************************************************************
+# *****             student working area below              *****
+# ***************************************************************
+
+- hosts: leaf01
+  name: Leaf01 interfaces and routing
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: copy eni
+      copy: 
+# *******************************************
+# ***** use/edit file leaf01-student-if *****
+# *******************************************
+        src: /home/cumulus/ON-15/step-05/leaf01-student-if
+        dest: /etc/network/interfaces
+    - name: activate changes on leaf01
+      shell: /sbin/ifreload -a     
+
+# ***************************************************************
+# *****             Don't change anything below             *****
+# ***************************************************************
+
+# Leaf02 
+
+- hosts: leaf02
+  name: Leaf02 interfaces and routing
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: copy eni
+      copy: 
+        src: /home/cumulus/ON-15/step-05/leaf02-if
+        dest: /etc/network/interfaces
+    - name: activate changes on leaf02
+      shell: /sbin/ifreload -a  
+         
+# Leaf03 
+
+- hosts: leaf03
+  name: Leaf03 interfaces and routing
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: copy eni
+      copy: 
+        src: /home/cumulus/ON-15/step-05/leaf03-if
+        dest: /etc/network/interfaces
+    - name: activate changes on leaf03
+      shell: /sbin/ifreload -a  
+
+# Leaf04
+
+- hosts: leaf04
+  name: Leaf04 interfaces and routing
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: copy eni
+      copy: 
+        src: /home/cumulus/ON-15/step-05/leaf04-if
+        dest: /etc/network/interfaces
+    - name: activate changes on leaf04
+      shell: /sbin/ifreload -a  
+      
+# Leaf05
+
+- hosts: leaf05
+  name: Leaf05 interfaces and routing
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: copy eni
+      copy: 
+        src: /home/cumulus/ON-15/step-05/leaf05-if
+        dest: /etc/network/interfaces
+    - name: activate changes on leaf05
+      shell: /sbin/ifreload -a  
+      
+# Leaf06
+
+- hosts: leaf06
+  name: Leaf06 interfaces and routing
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: copy eni
+      copy: 
+        src: /home/cumulus/ON-15/step-05/leaf06-if
+        dest: /etc/network/interfaces
+    - name: activate changes on leaf06
+      shell: /sbin/ifreload -a  
