@@ -1,10 +1,7 @@
-{% set ip_lo = "************" %}
-{% set *******vlan = "**" %}
-{% *** ****** = "********" %}
-
 auto lo
 iface lo inet loopback
-    address {{ ip_lo }}
+        address 192.168.0.1/32
+        vxlan-local-tunnelip 192.168.0.1
 
 auto mgmt
 iface mgmt
@@ -12,8 +9,8 @@ iface mgmt
         address ::1/128
         vrf-table auto
 
-auto {{ ****** }}
-iface {{ ****** }}
+auto Tenant_A
+iface Tenant_A
         vrf-table auto
 
 auto Tenant_B
@@ -31,7 +28,7 @@ iface swp1
         
 auto bond1
 iface bond1
-    bridge-access {{ access_vlan }}
+    bridge-access 10
     bond-slaves swp1
     es-sys-mac 44:38:39:FF:FF:01
     bond-lacp-bypass-allow yes
@@ -47,20 +44,20 @@ iface swp32
 auto br_A
 iface br_A
         bridge-ports bond1 vxlan10 l3_vni_A
-        bridge-vids {{ access_vlan }} 20 
+        bridge-vids 10 20 
         bridge-vlan-aware yes
 
 auto vlan10
 iface vlan10
         address 10.0.10.240/24
         address-virtual 00:00:5e:00:00:01 10.0.10.254/24
-        vlan-id {{ *********** }}
+        vlan-id 10
         vlan-raw-device br_A
-        *** ************
+        vrf Tenant_A
         
 auto vxlan10
 iface vxlan10
-    bridge-access {{ access_vlan }}
+    bridge-access 10
     bridge-arp-nd-suppress off
     bridge-learning off
     mstpctl-bpduguard yes
@@ -82,4 +79,4 @@ iface l3_svi
     hwaddress 44:38:39:01:01:01
     vlan-id 1001
     vlan-raw-device br_A
-    vrf {{ ****** **
+    vrf Tenant_A
