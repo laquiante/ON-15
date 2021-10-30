@@ -11,9 +11,9 @@
     - name: kick it
       ansible.builtin.shell: /sbin/ifreload -a  
 
-    - name: copy frr
-      copy:
-        src: /home/cumulus/ON-15/step-07/leaf01-frr
+    - name: render file via template
+      template:
+        src: /home/cumulus/ON-15/step-07/template/leaf01-frr.j2
         dest: /etc/frr/frr.conf
     - name: reload frr
       ansible.builtin.shell: systemctl reload frr
