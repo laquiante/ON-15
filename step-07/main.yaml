@@ -4,7 +4,10 @@
   gather_facts: no
   
   vars:
-      l3-vni: 10010
+      l3-vni: 
+        - 10010
+        - 10011
+        - 10012
   
   tasks:
     - name: render file via template
