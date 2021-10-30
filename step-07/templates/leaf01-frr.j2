@@ -4,7 +4,7 @@ log syslog informational
 zebra nexthop proto only
 service integrated-vtysh-config
 !
-vrf Tenant_A
+vrf {{ vrf[0] }}
  vni {{ l3_vni }} 
  exit-vrf
 ! 
