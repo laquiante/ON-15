@@ -4,7 +4,7 @@
     dest: /etc/network/interfaces
     validate: ifup -a -s -i %s
     mode: 0644
-  notify: apply interface changes
+  notify: call ifupdown2
 
 - name: Force all notified handlers to run at this point, not waiting for normal sync points
   meta: flush_handlers
