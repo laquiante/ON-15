@@ -1,0 +1,20 @@
+---
+- name: Configure FRR daemons file
+  template:
+    src: daemons.j2
+    dest: /etc/frr/daemons
+    mode: 0640
+  notify:
+    - restart frr
+
+- name: Configure FRR
+  template:
+    src: "frr.conf.j2"
+    dest: /etc/frr/frr.conf
+    validate: vtysh -f %s --dryrun
+    mode: 0640
+  notify:
+    - reload frr
+
+- name: Force all notified handlers to run at this point, not waiting for normal sync points
+  meta: flush_handlers
