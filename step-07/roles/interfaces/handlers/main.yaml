@@ -1,0 +1,33 @@
+# std hander file
+---
+- name: restart frr
+  service:
+    name: frr
+    state: restarted
+    
+- name: reload frr
+  service:
+    name: frr
+    state: reloaded
+    
+- name: enable frr
+  service:
+    name: frr
+    state: started
+    enabled: true
+    
+- name: call ifupdown2
+  become: true
+  command: ifreload -a
+
+- name: restart switchd
+  become: true
+  service:
+    name: switchd
+    state: restarted
+
+- name: reload switchd
+  become: true
+  systemd:
+    name: switchd
+    state: reloaded
