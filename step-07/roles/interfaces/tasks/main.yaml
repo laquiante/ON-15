@@ -1,0 +1,10 @@
+- name: Configure interfaces
+  template:
+    src: "interfaces.j2"
+    dest: /etc/network/interfaces
+    validate: ifup -a -s -i %s
+    mode: 0644
+  notify: apply interface changes
+
+- name: Force all notified handlers to run at this point, not waiting for normal sync points
+  meta: flush_handlers
