@@ -48,17 +48,17 @@ vm02
 ansible_user=cumulus
 ansible_become_pass=CumulusLinux!
 
-[spine01:vars]
-asn=42
-router_id=192.168.0.201/32
-lo_ip=192.168.0.201/32
-vrf_name=Tenant_Test
-vrf_vxlan_id=42
+#[spine01:vars]
+#asn=42
+#router_id=192.168.0.201/32
+#lo_ip=192.168.0.201/32
+#vrf_name=Tenant_Test
+#vrf_vxlan_id=42
 
-[spine02:vars]
-asn=42
-router_id=192.168.0.202/32
-lo_ip=192.168.0.202/32
-vrf_name=Tenant_Test
-vrf_vxlan_id=42
+#[spine02:vars]
+#asn=42
+#router_id=192.168.0.202/32
+#lo_ip=192.168.0.202/32
+#vrf_name=Tenant_Test
+#vrf_vxlan_id=42
 
