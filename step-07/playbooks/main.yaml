@@ -1,0 +1,9 @@
+---
+- hosts: spine
+  become: true
+  user: cumulus
+  gather_facts: false
+  roles:
+    - {role: interfaces, tags: ["interfaces"]}
+    - {role: frr, tags: ["frr"]}
+    - {role: hostname, tags: ["hostname"]}
