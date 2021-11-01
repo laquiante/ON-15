@@ -1,0 +1,26 @@
+!
+router bgp {{ bgp.asn }}
+ bgp router-id {{ bgp.router_id }}
+ neighbor swp123 interface remote-as external
+ neighbor swp124 interface remote-as external
+ neighbor swp125 interface remote-as external
+ neighbor swp126 interface remote-as external
+ neighbor swp127 interface remote-as external
+ neighbor swp128 interface remote-as external
+ !
+ address-family ipv4 unicast
+  network {{ lo.ip }}
+ exit-address-family
+ !
+ address-family l2vpn evpn
+  neighbor swp123 activate
+  neighbor swp124 activate
+  neighbor swp125 activate
+  neighbor swp126 activate
+  neighbor swp127 activate
+  neighbor swp128 activate
+  advertise-all-vni
+ exit-address-family
+!
+line vty
+!
