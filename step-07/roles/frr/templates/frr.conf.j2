@@ -1,0 +1,15 @@
+frr defaults datacenter
+hostname {{ inventory_hostname }}
+log syslog informational
+zebra nexthop proto only
+service integrated-vtysh-config
+!
+{% if vrfs is defined %}
+{%   include './features/vrfs.j2' %}
+{% endif %}
+{% if bgp is defined %}
+{%   include './features/bgp.j2' %}
+{% endif %}
+!
+line vty
+!
