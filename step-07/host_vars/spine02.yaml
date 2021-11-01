@@ -1,5 +1,0 @@
-asn: 43
-router_id: 192.168.0.202/32
-lo_ip: 192.168.0.202/32
-vrf_name: Tenant_Test
-vrf_vxlan_id: 42
