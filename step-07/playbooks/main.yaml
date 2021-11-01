@@ -5,5 +5,5 @@
   gather_facts: false
   roles:
     - /home/cumulus/ON-15/step-07/roles/interfaces
-    - /home/cumulus/ON-15/step-07/rotels/frr
+    - /home/cumulus/ON-15/step-07/roles/frr
     - /home/cumulus/ON-15/step-07/hostname
