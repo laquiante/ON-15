@@ -31,9 +31,10 @@
   gather_facts: false
   tasks:
     - copy:
-# *******************************************
-# ****** use/edit topology-student.dot ******
-# *******************************************
+# *****************************************************
+# ****** use/edit topology-student.dot            *****
+# ****** this file is not complete and needs work *****
+# *****************************************************
         src: /home/cumulus/ON-15/inventory/files/topology-student.dot
         dest: /etc/ptm.d/topology.dot
         mode: '0644'
