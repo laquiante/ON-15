@@ -1,4 +1,4 @@
-asn: "42"
+asn: 4200000201
 router_id: "192.168.0.201"
 lo_ip: "192.168.0.201/32"
 vrf_name: Tenant_Test
