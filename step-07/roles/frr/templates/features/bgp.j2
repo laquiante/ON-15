@@ -1,12 +1,9 @@
 !
 router bgp {{ asn }}
  bgp router-id {{ router_id }}
- neighbor swp123 interface remote-as external
- neighbor swp124 interface remote-as external
- neighbor swp125 interface remote-as external
- neighbor swp126 interface remote-as external
- neighbor swp127 interface remote-as external
- neighbor swp128 interface remote-as external
+ {% for peer in bgp.neighbors.interface %}
+ neighbor {{ peer }} interface remote-as external
+{% endfor %}
  !
  address-family ipv4 unicast
   network {{ lo_ip }}
