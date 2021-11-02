@@ -1,0 +1,9 @@
+##########
+## swp ###
+##########
+
+{% for interface in interfaces %}
+auto {{ interface.name }}
+iface {{ interface.name }}
+
+{% endfor %}
