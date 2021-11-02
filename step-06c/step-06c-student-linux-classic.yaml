@@ -12,6 +12,10 @@
   tasks:
     - name: render file via template
       template: 
+ 
+# ********************************************************************
+# ***** your working area file: leaf01-if.j2 and following files *****
+# ********************************************************************
         src: /home/cumulus/ON-15/step-06c/templates/leaf01-if.j2
         dest: /etc/network/interfaces
     - name: kick it
