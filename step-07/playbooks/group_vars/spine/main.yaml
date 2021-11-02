@@ -7,12 +7,10 @@ interfaces:
   - swp127
   - swp128
 
-bgp:
-  neighbors:
-    interface: 
-    - swp123
-    - swp124
-    - swp125
-    - swp126
-    - swp127
-    - swp128
+bgp_spine_peers:
+  - swp123
+  - swp124
+  - swp125
+  - swp126
+  - swp127
+  - swp128
