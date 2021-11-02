@@ -1,4 +1,12 @@
 ---
+interfaces:
+  - swp123
+  - swp124
+  - swp125
+  - swp126
+  - swp127
+  - swp128
+
 bgp:
   neighbors:
     interface: 
