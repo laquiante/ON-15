@@ -3,19 +3,16 @@ router bgp {{ asn }}
  bgp router-id {{ router_id }}
  {% for peer in bgp_spine_peers %}
  neighbor {{ peer }} interface remote-as external
-{% endfor %}
+ {% endfor %}
  !
  address-family ipv4 unicast
   network {{ lo_ip }}
  exit-address-family
  !
  address-family l2vpn evpn
-  neighbor swp123 activate
-  neighbor swp124 activate
-  neighbor swp125 activate
-  neighbor swp126 activate
-  neighbor swp127 activate
-  neighbor swp128 activate
+ {% for peer in bgp_spine_peers %}
+ neighbor {{ peer }} activate
+ {% endfor %} 
   advertise-all-vni
  exit-address-family
 !
