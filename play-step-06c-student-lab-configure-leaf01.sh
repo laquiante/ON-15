@@ -1,5 +1,5 @@
-#
-# calling playbook to run all leaf's minus leaf01 which shows a jinja template for the loopback as a reference
-#
+################################################################################################
+# the following playbook "step-06c-student-linux-classic" and maybe dependent files needs work #
+################################################################################################
 ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-06c/step-06c-student-linux-classic.yaml
 #
