@@ -6,15 +6,11 @@
   tasks:
     - name: cl 
       lineinfile:
-      path=/home/cumulus/.bashrc
-      line="alias cl='sudo vtysh -c'"
-      owner=cumulus
-      regexp='^alias cl='sudo vtysh -c'$'
-#        state=present
-#        insertafter=EOF
-#        create=True
- 
-# mode: '0644' 
+        path=/home/cumulus/.bashrc
+        create: yes
+        mode: 0644
+        line="alias cl='sudo vtysh -c'"
+        regexp="^alias cl='sudo vtysh -c'$"
 
     
 - hosts: switche
