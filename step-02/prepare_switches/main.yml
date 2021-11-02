@@ -7,8 +7,6 @@
     - name: cl 
       lineinfile:
         path="/home/cumulus/.bashrc"
-#        create= yes
-#        mode= 0644
         line="alias cl='sudo vtysh -c'"
         regexp="^alias cl='sudo vtysh -c'$"
 
