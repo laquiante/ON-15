@@ -1,5 +1,16 @@
 ---
 - hosts: switche
+  name: prepare convenient frr
+  lineinfile:
+    path=/home/cumulus/.bashrc
+    line="alias cl='sudo vtysh -c'"
+    owner=cumulus
+    regexp='^alias cl='sudo vtysh -c'$'
+    state=present
+    insertafter=EOF
+    create=True
+    
+- hosts: switche
   name: disable NCLU and enable NVUE
   become: yes
   gather_facts: no
