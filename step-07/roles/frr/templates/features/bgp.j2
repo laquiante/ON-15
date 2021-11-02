@@ -1,7 +1,7 @@
 !
 router bgp {{ asn }}
  bgp router-id {{ router_id }}
- {% for peer in neighbors.interface %}
+ {% for peer in interface %}
  neighbor {{ peer }} interface remote-as external
 {% endfor %}
  !
