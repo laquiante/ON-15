@@ -15,4 +15,6 @@ Step-06: evpn layer 3
 
 Step-06b: looping over leafs
 
-Step-06c: roles and J2 example
+Step-06c: J2 example
+
+(Step-07 : roles, templates, and vars)
