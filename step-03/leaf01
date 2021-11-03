@@ -15,6 +15,7 @@
       
     - name: activate staging buffer
       shell: nv config apply -y
+      
     - name: iproute2 bridge interface list
       shell: bridge link
       register: br
