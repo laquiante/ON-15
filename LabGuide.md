@@ -1,4 +1,4 @@
-# Nvidia Networking Academy Cumulus Linux Training
+# Nvidia Academy GTC Workshop
 
 *"Practice makes perfect..."*
 
