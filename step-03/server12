@@ -37,11 +37,11 @@
       register: ergebnis
       
     - name: test-1
-      when: ergebnis.stdout.find('eth0') != -1
+      when: ergebnis.stdout.find('uplink.10') != -1
       debug: msg="uplink.10 gesetzt != -1"
       
     - name: test-2
-      when: ergebnis.stdout.find('eth0') == 0
+      when: ergebnis.stdout.find('uplink.10') == 0
       debug: msg="uplink.10 gesetzt == 0"      
     
    
