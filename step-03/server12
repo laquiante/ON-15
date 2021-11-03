@@ -34,11 +34,11 @@
     # 03.NOV
 
     - name: test-1
-      command: /sbin/ip link del link dev uplink.10
+      shell: /sbin/ip link del link dev uplink.10
       when: ergebnis.stdout.find('uplink.10') != -1
       
     - name: test-2
-      command: /sbin/ip link del link dev uplink.20
+      shell: /sbin/ip link del link dev uplink.20
       when: ergebnis.stdout.find('uplink.20') != -1
       
     - name: are .10 and .20 present?
