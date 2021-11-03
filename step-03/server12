@@ -34,7 +34,7 @@
     # 03.NOV
     - name: are .10 and .20 present?
       register: ergebnis
-      shell: "cat ip -br l"
+      shell: "ip -br l"
       
     - name: test
       when: '"eth0" in ergebnis'
