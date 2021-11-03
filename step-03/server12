@@ -31,6 +31,25 @@
     #  - set up dev uplink.20
     #  shell: ip addr add 10.0.20.12/24 dev uplink.20
 
+    # 03.NOV
+    - name: are .10 and .20 present?
+      register: presence
+      shell: "grep -i 'uplink.10' /sbin/ip -br l"
+      
+    - name: test
+      debug: msg= "uplink.10 gesetzt"
+      when: presence is changed
+   
+# cumulus@server12:~$ ip -br l
+# lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP>
+# eth0             UP             44:38:39:00:00:3c <BROADCAST,MULTICAST,UP,LOWER_UP>
+# enp97s0f0        UP             44:38:39:00:00:09 <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP>
+# enp97s0f1        UP             44:38:39:00:00:09 <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP>
+# uplink           UP             44:38:39:00:00:09 <BROADCAST,MULTICAST,MASTER,UP,LOWER_UP>
+# uplink.10@uplink UP             44:38:39:00:00:09 <BROADCAST,MULTICAST,UP,LOWER_UP>
+# uplink.20@uplink UP             44:38:39:00:00:09 <BROADCAST,MULTICAST,UP,LOWER_UP>
+
+
     # workaround for the fix LOL
     - name: ip(route2)
       command: /sbin/ip link add link uplink name uplink.10 type vlan id 10
