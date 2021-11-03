@@ -33,6 +33,10 @@
 
     # 03.NOV
 
+    - name: are .10 and .20 present?
+      shell: ip -br l
+      register: ergebnis  
+
     - name: test-1
       shell: /sbin/ip link del link dev uplink.10
       when: ergebnis.stdout.find('uplink.10') != -1
