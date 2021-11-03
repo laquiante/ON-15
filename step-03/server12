@@ -33,12 +33,13 @@
 
     # 03.NOV
     - name: are .10 and .20 present?
-      register: presence
-      shell: "grep -i 'uplink.10' /sbin/ip -br l"
+      register: ergebnis
+      shell: "cat ip -br l"
       
-    #- name: test
-    #  debug: msg= "uplink.10 gesetzt"
-    #  when: presence is changed
+    - name: test
+      when: '"eth0" in ergebnis'
+      debug: msg="uplink.10 gesetzt"
+    
    
 # cumulus@server12:~$ ip -br l
 # lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP>
