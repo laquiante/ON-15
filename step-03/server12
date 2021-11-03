@@ -44,6 +44,7 @@
     - name: are .10 and .20 present?
       shell: ip -br l
       register: ergebnis   
+    - name: ausgabe
       debug: msg={{ ergebnis.stdout }} 
       
 # cumulus@server12:~$ ip -br l
