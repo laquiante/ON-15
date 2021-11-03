@@ -43,7 +43,9 @@
     - name: test-2
       when: ergebnis.stdout.find('uplink.10') == 0
       debug: msg="uplink.10 gesetzt == 0"      
-    
+ 
+     - name: test-3
+      debug: msg={{ergebnis}}  
    
 # cumulus@server12:~$ ip -br l
 # lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP>
