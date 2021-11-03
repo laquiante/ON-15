@@ -38,14 +38,17 @@
       
     - name: test-1
       when: ergebnis.stdout.find('uplink.10') != -1
-      debug: msg="uplink.10 gesetzt != -1"
+      block:
+        - name: entfernen .10 und .20
+          command: /sbin/ip link del link dev uplink.10
+          command: /sbin/ip link del link dev uplink.20
+        - name: holen der schnittstellen
+          command: /sbin/ip -br l
+          register: links
+        - name: darstellen
+          debug: msg={{ links.stdout }}  
       
-    - name: test-2
-      when: ergebnis.stdout.find('uplink.10') == 0
-      debug: msg="uplink.10 gesetzt == 0"      
  
-    - name: test-3
-      debug: msg={{ergebnis}}  
    
 # cumulus@server12:~$ ip -br l
 # lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP>
