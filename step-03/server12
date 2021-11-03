@@ -90,3 +90,12 @@
     - name: ip(route2)
       command: /sbin/ip addre add 10.0.20.12/24 dev uplink.20
       
+    - name: are .10 and .20 present?
+      shell: ip -br l
+      register: ergebnis   
+    - name: ausgabe
+      debug: msg={{ ergebnis.stdout }} 
+      
+    - name: please verify the output (interface list)
+      pause:
+        prompt: Please verify the interface list! Press return to continue. Press Ctrl+c and then "a" to abort
