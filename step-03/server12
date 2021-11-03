@@ -33,12 +33,16 @@
 
     # 03.NOV
     - name: are .10 and .20 present?
-      register: ergebnis
       shell: "ip -br l"
+      register: ergebnis
       
-    - name: test
-      when: '"eth0" in ergebnis'
-      debug: msg="uplink.10 gesetzt"
+    - name: test-1
+      when: ergebnis.stdout.find('eth0') != -1
+      debug: msg="uplink.10 gesetzt != -1"
+      
+    - name: test-2
+      when: ergebnis.stdout.find('eth0') == 0
+      debug: msg="uplink.10 gesetzt == 0"      
     
    
 # cumulus@server12:~$ ip -br l
