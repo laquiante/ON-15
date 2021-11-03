@@ -42,7 +42,7 @@
       when: ergebnis.stdout.find('uplink.20') != -1
       
     - name: are .10 and .20 present?
-      shell: "ip -br l"
+      shell: ip -br l
       register: ergebnis   
       debug: msg={{ ergebnis.stdout }} 
       
