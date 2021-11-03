@@ -37,19 +37,10 @@
       register: ergebnis
       
     - name: test-1
+      command: /sbin/ip link del link dev uplink.10
+      command: /sbin/ip link del link dev uplink.20
       when: ergebnis.stdout.find('uplink.10') != -1
-      block:
-        - name: entfernen .10 und .20
-          command: /sbin/ip link del link dev uplink.10
-          command: /sbin/ip link del link dev uplink.20
-        - name: holen der schnittstellen
-          command: /sbin/ip -br l
-          register: links
-        - name: darstellen
-          debug: msg={{ links.stdout }}  
       
- 
-   
 # cumulus@server12:~$ ip -br l
 # lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP>
 # eth0             UP             44:38:39:00:00:3c <BROADCAST,MULTICAST,UP,LOWER_UP>
