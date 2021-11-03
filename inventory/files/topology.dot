@@ -1,7 +1,11 @@
 graph "ALQ" {
 
 # pod 01
-"storage01":"eth1" -- "leaf01":"swp1" [LLDP="match_type=SysName"]
+# 
+# 03-NOV-2021 fix
+#
+#"storage01":"eth1" -- "leaf01":"swp1"
+"storage01":"44:38:39:00:00:01" -- "leaf01":"swp1"
 "storage01":"eth2" -- "leaf02":"swp1"
 
 # pod 02
