@@ -12,7 +12,8 @@
       shell: nv set platform hostname value spine02
     - name: activate staging buffer
       shell: nv config apply -y
-    - name: iproute2 interface list
-      shell: ip -br -j l
-      register: iproute2
-    - debug: msg={{ iproute2.stdout }}
+      
+#    - name: iproute2 interface list
+#      shell: ip -br -j l
+#      register: iproute2
+#    - debug: msg={{ iproute2.stdout }}
