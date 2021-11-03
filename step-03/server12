@@ -37,8 +37,9 @@
       register: ergebnis
       
     - name: test-1
-      command: /sbin/ip link del link dev uplink.10
-      command: /sbin/ip link del link dev uplink.20
+      block:
+        command: /sbin/ip link del link dev uplink.10
+        command: /sbin/ip link del link dev uplink.20
       when: ergebnis.stdout.find('uplink.10') != -1
       
 # cumulus@server12:~$ ip -br l
