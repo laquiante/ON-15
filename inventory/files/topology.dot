@@ -1,7 +1,7 @@
 graph "ALQ" {
 
 # pod 01
-"storage01":"eth1" -- "leaf01":"swp1"
+"storage01":"eth1" -- "leaf01":"swp1" [LLDP="match_type=SysName"]
 "storage01":"eth2" -- "leaf02":"swp1"
 
 # pod 02
