@@ -1,14 +1,14 @@
-ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/spine01
-ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/spine02
-ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/leaf01
-ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/leaf02
-ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/leaf03
-ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/leaf04
-ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/leaf05
-ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/leaf06
-ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/storage01
-ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/server11
-ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/server12
-ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/server13
-ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/vm01
-ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/vm02
+sudo ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/spine01
+sudo ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/spine02
+sudo ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/leaf01
+sudo ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/leaf02
+sudo ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/leaf03
+sudo ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/leaf04
+sudo ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/leaf05
+sudo ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/leaf06
+sudo ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/storage01
+sudo ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/server11
+sudo ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/server12
+sudo ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/server13
+sudo ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/vm01
+sudo ansible-playbook -i /home/cumulus/ON-15/inventory/files/hosts ./step-03/vm02
