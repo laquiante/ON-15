@@ -46,4 +46,5 @@ vm02
 
 [all:vars]
 ansible_user=cumulus
-ansible_become_pass=CumulusLinux!
+ansible_ssh_pass=Academy123
+ansible_become_pass=Academy123
