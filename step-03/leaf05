@@ -11,7 +11,7 @@
       - interface swp1,31-32
       - interface swp1.10 ip address 10.0.10.205/24
       - interface swp1.20 ip address 10.0.20.205/24
-      - platform hostname value leaf05
+      - system hostname leaf05
       
     - name: activate staging buffer
       shell: nv config apply -y
