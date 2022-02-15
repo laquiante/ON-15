@@ -9,7 +9,7 @@
     - name: enable switchports
       shell: nv set interface swp123-128
     - name: set hostname
-      shell: nv set platform hostname value spine02
+      shell: nv set system hostname spine02
     - name: activate staging buffer
       shell: nv config apply -y
       
