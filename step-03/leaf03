@@ -14,7 +14,7 @@
       - interface swp1 bridge domain br_A access 10
       - interface swp2 bridge domain br_B
       - interface swp3 bridge domain br_A access 11
-      - platform hostname value leaf03
+      - system hostname leaf03
       
     - name: activate staging buffer
       shell: nv config apply -y
