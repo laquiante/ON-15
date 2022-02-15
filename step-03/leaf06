@@ -11,7 +11,7 @@
       - interface swp1,31-32
       - interface swp1.10 ip address 10.0.110.206/24
       - interface swp1.20 ip address 10.0.120.206/24
-      - platform hostname value leaf06
+      - system hostname leaf06
     - name: activate staging buffer
       shell: nv config apply -y
     - name: iproute2 fib
