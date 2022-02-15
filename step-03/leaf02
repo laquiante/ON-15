@@ -11,7 +11,7 @@
       - interface swp1,31-32
       - bridge domain br_A vlan 10,11
       - interface swp1 bridge domain br_A access 10
-      - platform hostname value leaf02
+      - system hostname leaf02
       
     - name: activate staging buffer
       shell: nv config apply -y
