@@ -11,4 +11,4 @@
         dest: /etc/network/interfaces
     # aktivieren
     - name: activate changes 
-      shell: nv config apply startup
+      shell: nv config apply startup -y
