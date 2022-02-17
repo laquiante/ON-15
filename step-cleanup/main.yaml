@@ -13,7 +13,7 @@
     - name: activate changes 
       shell: /sbin/ifreload -a
       
-# FRR (leafing daemons untouched)
+# FRR 
 
 - hosts: switche
   name: frr
@@ -27,3 +27,15 @@
     # aktivieren
     - name: activate changes 
       shell: systemctl reload frr
+
+# Daemon
+
+- hosts: switche
+  name: Configure /etc/frr/daemon
+  become: yes
+  gather_facts: false
+  tasks:
+    - copy:
+        src: /home/cumulus/ON-15/inventory/files/daemons
+        dest: /etc/frr/daemons
+    - shell: systemctl restart frr
