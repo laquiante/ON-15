@@ -8,7 +8,7 @@
     - name: clean me up
       copy: 
         src: /home/cumulus/ON-15/step-cleanup/{{ inventory_hostname }}
-        dest: /etc/network/interfaces
+        dest: /etc/nvue.d/startup.yaml
     # aktivieren
     - name: activate changes 
       shell: nv config apply startup -y
