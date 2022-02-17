@@ -1,14 +1,29 @@
 # Host e/n/i Datei
 
-- hosts: storage01
-  name: host1 Interfaces
+- hosts: switche
+  name: if
   become: yes
   gather_facts: no
   tasks:
     - name: clean me up
       copy: 
-        src: /home/cumulus/ON-15/step-cleanup/storage01
+        src: /home/cumulus/ON-15/step-cleanup/{{ inventory_hostname }}-if
         dest: /etc/network/interfaces
     # aktivieren
     - name: activate changes 
       shell: /sbin/ifreload -a
+      
+# FRR (leafing daemons untouched)
+
+- hosts: switche
+  name: frr
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: clean me up
+      copy: 
+        src: /home/cumulus/ON-15/step-cleanup/{{ inventory_hostname }}-frr
+        dest: /etc/frr/frr.conf
+    # aktivieren
+    - name: activate changes 
+      shell: systemctl reload frr
