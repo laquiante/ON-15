@@ -12,3 +12,8 @@
     # aktivieren
     - name: activate changes 
       shell: nv config apply startup -y
+    # enalbe netd for 5.0 in case an older script was used before
+    - name: netd enable
+      shell: systemctl enable netd
+    - name: netd start
+      shell: systemctl start netd
