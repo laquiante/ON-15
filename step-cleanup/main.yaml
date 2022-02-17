@@ -1,0 +1,14 @@
+# Host e/n/i Datei
+
+- hosts: storage01
+  name: host1 Interfaces
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: clean me up
+      copy: 
+        src: /home/cumulus/ON-15/step-cleanup/storage01
+        dest: /etc/network/interfaces
+    # aktivieren
+    - name: activate changes 
+      shell: /sbin/ifreload -a
