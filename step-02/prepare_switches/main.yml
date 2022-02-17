@@ -10,22 +10,22 @@
         line="alias cl='sudo vtysh -c'"
         regexp="^alias cl='sudo vtysh -c'$"
 
-    
-- hosts: switche
-  name: disable NCLU and enable NVUE
-  become: yes
-  gather_facts: no
-  vars:
-    ansible_python_interpreter: /usr/bin/python3
-  tasks:
-    - name: stop NCLU
-      shell: systemctl stop netd
-    - name: disable NCLU
-      shell: systemctl disable netd
-    - name: enable NVUE was CUE
-      shell: systemctl enable nvued
-    - name: start NVUE was CUE
-      shell: systemctl start nvued
+# formerly with 4.4 needed...
+#- hosts: switche
+#  name: disable NCLU and enable NVUE
+#  become: yes
+#  gather_facts: no
+#  vars:
+#    ansible_python_interpreter: /usr/bin/python3
+#  tasks:
+#    - name: stop NCLU
+#      shell: systemctl stop netd
+#    - name: disable NCLU
+#      shell: systemctl disable netd
+#    - name: enable NVUE was CUE
+#      shell: systemctl enable nvued
+#    - name: start NVUE was CUE
+#      shell: systemctl start nvued
 
 - hosts: switche
   name: Configure /etc/frr/daemon
