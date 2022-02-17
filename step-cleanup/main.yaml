@@ -1,0 +1,14 @@
+# startup.yaml
+
+- hosts: switche
+  name: if
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: clean me up
+      copy: 
+        src: /home/cumulus/ON-15/step-cleanup/{{ inventory_hostname }}
+        dest: /etc/network/interfaces
+    # aktivieren
+    - name: activate changes 
+      shell: nv config apply startup
