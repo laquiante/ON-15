@@ -38,18 +38,19 @@
   become: yes
   gather_facts: no
   tasks:
-  apt:
-    name: frr
-    state: absent
+    - name: remove frr
+      apt:
+        name: frr
+        state: absent
 
   tasks:
-  name: Remove daemons config
-  ansible.builtin.file:
-    path: /etc/frr/daemons
-    state: absent
+    - name: Remove daemons config
+      ansible.builtin.file:
+        path: /etc/frr/daemons
+        state: absent
   
   tasks:
-  name: Remove frr config
-  ansible.builtin.file:
-    path: /etc/frr/frr.config
-    state: absent
+    - name: Remove frr config
+      ansible.builtin.file:
+        path: /etc/frr/frr.config
+        state: absent
