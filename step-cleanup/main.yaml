@@ -20,7 +20,7 @@
 
 # Host e/n/i Datei
 
-- hosts: storage01:server11:server12:server13:vm01:vm02
+- hosts: storage01:server11:server12:server13:vm01:vm02:hypervisor01
   name: clean up interfaces
   become: yes
   gather_facts: no
