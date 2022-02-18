@@ -18,6 +18,18 @@
     - name: netd start
       shell: systemctl start netd
 
+# comp issue 18-02-2022
+
+- hosts: hypervisor01
+  name: legacy bridge tool
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: add brctl
+      apt:
+        name: brctl
+        state: present
+
 # Host e/n/i Datei
 
 - hosts: storage01:server11:server12:server13:vm01:vm02:hypervisor01
