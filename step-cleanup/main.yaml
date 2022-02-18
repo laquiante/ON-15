@@ -25,9 +25,9 @@
   become: yes
   gather_facts: no
   tasks:
-    - name: add brctl
+    - name: add utils
       apt:
-        name: brctl
+        name: bridge-utils
         state: present
 
 # Host e/n/i Datei
