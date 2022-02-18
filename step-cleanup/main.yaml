@@ -20,7 +20,7 @@
 
 # Host e/n/i Datei
 
-- hosts: storage01:server11:server12:server13
+- hosts: storage01:server11:server12:server13:vm01:vm02
   name: clean up interfaces
   become: yes
   gather_facts: no
@@ -32,3 +32,22 @@
     # aktivieren
     - name: activate changes on node
       shell: /sbin/ifreload -a
+
+- hosts: vm01:vm02
+  name: clean up frr
+  become: yes
+  gather_facts: no
+- name: Remove "foo" package
+  apt:
+    name: frr
+    state: absent
+
+- name: Remove daemons config
+  ansible.builtin.file:
+    path: /etc/frr/daemons
+    state: absent
+
+- name: Remove frr config
+  ansible.builtin.file:
+    path: /etc/frr/frr.config
+    state: absent
