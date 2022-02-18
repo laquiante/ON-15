@@ -27,7 +27,7 @@
   tasks:
     - name: Interfaces
       copy: 
-        src: /home/cumulus/ON-15/compute
+        src: /home/cumulus/ON-15/step-cleanup/compute
         dest: /etc/network/interfaces
     # aktivieren
     - name: activate changes on node
