@@ -17,3 +17,18 @@
       shell: systemctl enable netd
     - name: netd start
       shell: systemctl start netd
+
+# Host e/n/i Datei
+
+- hosts: storage01
+  name: clean up storage01
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: Interfaces
+      copy: 
+        src: /home/cumulus/ON-15/storage01
+        dest: /etc/network/interfaces
+    # aktivieren
+    - name: activate changes on storage01
+      shell: /sbin/ifreload -a
